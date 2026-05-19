@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yutaka Morita</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f8fa;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero {
+      position: relative;
+      height: 520px;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('cover.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      opacity: 0.95;
+    }
+
+    .profile-wrapper {
+      margin-top: -70px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-icon {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 6px solid white;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      background: white;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 24px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .intro h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #1F3A5F;
+    }
+
+    .intro p {
+      color: #555;
+      font-size: 18px;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    section h3 {
+      font-size: 26px;
+      margin-bottom: 24px;
+      color: #1F3A5F;
+      border-bottom: 2px solid #d9e1ea;
+      padding-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: #1F3A5F;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .link-card {
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .footer-image {
+      position: relative;
+      height: 340px;
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('parfait.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .footer-image h2 {
+      font-size: 42px;
+      font-weight: 300;
+      font-style: italic;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      background: #1F3A5F;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      .hero {
+        height: 420px;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .profile-icon {
+        width: 110px;
+        height: 110px;
+      }
+
+      .footer-image h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Yutaka Morita</h1>
+      <p>Exploring UX, AI & Human Decision Making</p>
+    </div>
+  </section>
+
+  <div class="profile-wrapper">
+    <img src="profile.jpg" alt="Profile" class="profile-icon">
+  </div>
+
+  <main class="container">
+
+    <section class="intro">
+      <h2>AI時代における「人間の価値」を探究しています。</h2>
+      <p>
+        UX、AI、構造思考を軸に、
+        人間の意思決定や社会システムについて考えています。
+      </p>
+    </section>
+
+    <section>
+      <h3>Links</h3>
+
+      <div class="grid">
+
+        <a class="card link-card" href="#">
+          LinkedIn
+        </a>
+
+        <a class="card link-card" href="#">
+          note
+        </a>
+
+        <a class="card link-card" href="#">
+          X
+        </a>
+
+        <a class="card link-card" href="#">
+          Medium
+        </a>
+
+        <a class="card link-card" href="#">
+          GitHub
+        </a>
+
+      </div>
+    </section>
+
+    <section>
+      <h3>Projects</h3>
+
+      <div class="grid">
+
+        <div class="card">
+          <h4>Elena Chat UI Prototype</h4>
+          <p>
+            AI×UX対話体験を探るプロトタイプ。
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>UX Character Diagnosis</h4>
+          <p>
+            キャラクターを通じたUXリサーチ実験。
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Structure Thinking Notes</h4>
+          <p>
+            構造・意思決定・共同体についての思考ログ。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h3>Thinking Themes</h3>
+
+      <div class="grid">
+
+        <div class="card">
+          <h4>AIと人間の役割分担</h4>
+          <p>
+            AI時代における人間の価値を探究。
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>UXと意思決定</h4>
+          <p>
+            人間の判断と体験設計について。
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Invisible Infrastructure</h4>
+          <p>
+            当たり前を支える構造への観察。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <section class="footer-image">
+    <h2>Perfect moments matter too.</h2>
+  </section>
+
+  <footer>
+    © 2025 Yutaka Morita
+  </footer>
+
+</body>
+</html>
