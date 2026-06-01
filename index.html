@@ -6,7 +6,7 @@
   <title>Yutaka Morita</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -17,9 +17,10 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f7f8fa;
+      background: #f5f7fb;
       color: #111;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
@@ -29,77 +30,145 @@
 
     .hero {
       position: relative;
-      height: 520px;
+      min-height: clamp(650px, 90vw, 900px);
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('assets/cover.png') center/cover no-repeat;
+        linear-gradient(rgba(5,18,42,0.28), rgba(5,18,42,0.18) 42%, rgba(5,18,42,0.52)),
+        url('assets/cover.png') 90% center / cover no-repeat;
+      background-color: #06182f;
+      background-attachment: fixed;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
-      padding: 20px;
+      padding: 120px 20px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 880px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.32);
     }
 
     .hero-content h1 {
-      font-size: 56px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6vw, 76px);
       font-weight: 700;
-      margin-bottom: 16px;
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: 0;
+    }
+
+    .hero-content h1::after {
+      content: "";
+      display: block;
+      width: 86px;
+      height: 2px;
+      margin: 24px auto 0;
+      background: rgba(195,213,246,0.92);
     }
 
     .hero-content p {
-      font-size: 20px;
-      opacity: 0.95;
+      font-size: clamp(18px, 2.2vw, 26px);
+      opacity: 0.96;
     }
 
-    .profile-wrapper {
-      margin-top: -70px;
-      display: flex;
-      justify-content: center;
+    .hero-content .hero-subcopy {
+      margin-top: 8px;
+      font-size: clamp(15px, 1.5vw, 20px);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .profile-panel {
+      position: relative;
+      z-index: 2;
+      margin-top: 0;
+      padding: 0 24px 46px;
+      background: white;
+      text-align: center;
+    }
+
+    .profile-panel::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -112px;
+      width: 132vw;
+      height: 160px;
+      transform: translateX(-50%);
+      clip-path: ellipse(50% 100% at 50% 100%);
+      background: white;
+      z-index: 0;
+    }
+
+    .profile-panel > * {
+      position: relative;
+      z-index: 1;
     }
 
     .profile-icon {
-      width: 140px;
-      height: 140px;
+      width: 172px;
+      height: 172px;
+      margin-top: -170px;
       border-radius: 50%;
       border: 6px solid white;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 14px 34px rgba(20,38,64,0.22);
       background: white;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 24px auto 0;
+    }
+
+    .intro h2 {
+      color: #1b2a3f;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.9;
+    }
+
+    .intro p {
+      color: #1b2a3f;
+      font-size: 18px;
+      line-height: 1.9;
     }
 
     .container {
       max-width: 960px;
       margin: auto;
-      padding: 40px 24px 80px;
+      padding: 38px 24px 76px;
     }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 60px;
+    .container > section {
+      margin-bottom: 68px;
     }
 
-    .intro h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-      color: #1F3A5F;
-    }
-
-    .intro p {
-      color: #555;
-      font-size: 18px;
-    }
-
-    section {
-      margin-bottom: 72px;
+    .container > section:last-child {
+      margin-bottom: 0;
     }
 
     section h3 {
+      display: flex;
+      align-items: center;
+      gap: 24px;
       font-size: 26px;
-      margin-bottom: 24px;
+      line-height: 1.25;
+      margin-bottom: 30px;
       color: #1F3A5F;
-      border-bottom: 2px solid #d9e1ea;
-      padding-bottom: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    section h3::before,
+    section h3::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: #cdd7e4;
     }
 
     .grid {
@@ -109,6 +178,8 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
       background: white;
       border-radius: 18px;
       padding: 24px;
@@ -125,68 +196,240 @@
       color: #1F3A5F;
     }
 
+    .card-meta {
+      display: block;
+      margin: -4px 0 12px;
+      color: #7b8797;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
     .card p {
+      margin-bottom: 18px;
       color: #555;
       font-size: 15px;
     }
 
-    .link-card {
-      text-align: center;
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      margin-top: auto;
+      color: #1F3A5F;
+      font-size: 13px;
       font-weight: 600;
-      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .card-link:hover,
+    .card-link:focus-visible {
+      color: #142a49;
+    }
+
+    .card-link-icon {
+      width: 13px;
+      height: 13px;
+      flex: 0 0 auto;
+    }
+
+    .card-status {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: auto;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef2f7;
+      color: #7b8797;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .link-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 112px;
+      padding: 20px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .link-card:hover,
+    .link-card:focus-visible {
+      text-decoration: none;
+    }
+
+    .link-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+    }
+
+    .link-icon svg {
+      display: block;
+      width: 34px;
+      height: 34px;
+    }
+
+    .link-icon img {
+      display: block;
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .link-icon.note img {
+      width: 124px;
+      height: auto;
+    }
+
+    .link-icon.note {
+      width: 124px;
+      height: 42px;
+    }
+
+    .link-icon.linkedin svg {
+      color: #0A66C2;
+    }
+
+    .link-icon.facebook svg {
+      color: #1877F2;
+    }
+
+    .link-icon.github svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .link-icon.x svg,
+    .link-icon.medium svg,
+    .link-icon.github svg {
+      color: #111;
+    }
+
+    .link-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      line-height: 1;
+      color: #111827;
+      white-space: nowrap;
+    }
+
+    .external-icon {
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 8px);
+      transform: translateY(-50%);
+      width: 13px;
+      height: 13px;
+      color: #38527a;
     }
 
     .footer-image {
       position: relative;
-      height: 340px;
+      min-height: clamp(330px, 53.35vw, 680px);
+      background-color: #07101b;
       background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url('assets/parfait.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        url('assets/bg_parfait.png') center center / cover no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
       text-align: center;
       color: white;
-      padding: 20px;
     }
 
-    .footer-image h2 {
-      font-size: 42px;
-      font-weight: 300;
-      font-style: italic;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    .footer-image-text {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+      transform: translateY(-50%);
+      pointer-events: none;
     }
 
     footer {
-      background: #1F3A5F;
-      color: rgba(255,255,255,0.8);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      width: 100%;
+      background: rgba(5,18,42,0.58);
+      color: rgba(255,255,255,0.82);
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 12px 20px;
+      font-size: 13px;
+      line-height: 1.7;
+      backdrop-filter: blur(4px);
     }
 
     @media (max-width: 768px) {
 
       .hero {
-        height: 420px;
+        padding: 72px 20px 132px;
       }
 
       .hero-content h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .hero-content p {
         font-size: 16px;
       }
 
-      .profile-icon {
-        width: 110px;
-        height: 110px;
+      .profile-panel {
+        margin-top: 0;
+        padding-bottom: 34px;
       }
 
-      .footer-image h2 {
-        font-size: 28px;
+      .profile-panel::before {
+        top: -74px;
+        height: 106px;
       }
+
+      .profile-icon {
+        width: 128px;
+        height: 128px;
+        margin-top: -112px;
+      }
+
+      .intro h2,
+      .intro p {
+        font-size: 15px;
+      }
+
+      .container {
+        padding-top: 32px;
+        padding-bottom: 58px;
+      }
+
+      section h3 {
+        gap: 14px;
+        font-size: 22px;
+      }
+
+      .footer-image {
+        min-height: clamp(220px, 53.35vw, 390px);
+        background-attachment: scroll;
+      }
+
+      .footer-image-text {
+        width: 82%;
+      }
+
     }
   </style>
 </head>
@@ -197,46 +440,113 @@
     <div class="hero-content">
       <h1>Yutaka Morita</h1>
       <p>Exploring UX, AI & Human Decision Making</p>
+      <p class="hero-subcopy">AI時代における「人間の価値」を探究しています。</p>
     </div>
   </section>
 
-  <div class="profile-wrapper">
+  <section class="profile-panel">
     <img src="assets/profile.jpg" alt="Profile" class="profile-icon">
-  </div>
 
-  <main class="container">
-
-    <section class="intro">
-      <h2>AI時代における「人間の価値」を探究しています。</h2>
+    <div class="intro">
+      <h2>
+        UXデザイン、AI、構造思考を軸に
+      </h2>
       <p>
-        UX、AI、構造思考を軸に、
         人間の意思決定や社会システムについて考えています。
       </p>
-    </section>
+    </div>
+  </section>
+
+  <main class="container">
 
     <section>
       <h3>Links</h3>
 
       <div class="grid">
 
-        <a class="card link-card" href="#">
-          LinkedIn
+        <a class="card link-card" href="http://www.linkedin.com/in/yutaka-morita-designer" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon linkedin">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect width="24" height="24" rx="3" fill="currentColor"/>
+              <path fill="white" d="M6.1 8.95h3.1V18h-3.1V8.95Zm1.55-4.5a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6ZM10.8 8.95h2.98v1.24h.04c.42-.74 1.43-1.42 2.75-1.42 2.88 0 3.43 1.78 3.43 4.09V18h-3.1v-4.58c0-1.06-.02-2.42-1.53-2.42-1.54 0-1.78 1.12-1.78 2.35V18H10.8V8.95Z"/>
+            </svg>
+          </span>
+          <span class="link-label">
+            LinkedIn
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
         </a>
 
-        <a class="card link-card" href="#">
-          note
+        <a class="card link-card" href="https://note.com/yutaka_morita_d" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon note">
+            <img src="assets/note-logo.png" alt="" aria-hidden="true">
+          </span>
+          <span class="link-label">
+            note
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
         </a>
 
-        <a class="card link-card" href="#">
-          X
+        <a class="card link-card" href="https://x.com/yutaka_morita_" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon x">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M13.9 10.5 21.1 2h-2.4l-5.9 6.9L8.1 2H2.5l7.6 11.1L2.8 22h2.4l6-7.2 4.9 7.2h5.6l-7.8-11.5Zm-2 2.4-1.1-1.6L6.5 3.8h1.4l4.1 6.8 1.1 1.6 4.6 8h-1.4l-4.4-7.3Z"/>
+            </svg>
+          </span>
+          <span class="link-label">
+            X (Twitter)
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
         </a>
 
-        <a class="card link-card" href="#">
-          Medium
+        <a class="card link-card" href="https://medium.com/@cv63kittyhawk" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon medium">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect width="24" height="24" rx="2" fill="currentColor"/>
+              <path fill="white" d="M4.25 17.7 6.1 15.45V8.2L4.45 6.25v-.28h5.02l3.1 7.6 2.74-7.6h4.53v.28l-1.42 1.37v8.77l1.36 1.31v.3h-6.12v-.3l1.42-1.35V9.3L11.55 18h-.48L7.15 9.3v5.84l1.85 2.56v.3H4.25v-.3Z"/>
+            </svg>
+          </span>
+          <span class="link-label">
+            Medium
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
         </a>
 
-        <a class="card link-card" href="#">
-          GitHub
+        <a class="card link-card" href="https://github.com/cv63kittyhawk" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon github">
+            <svg viewBox="0 0 98 96" aria-hidden="true">
+              <path fill="currentColor" d="M48.9 0C21.9 0 0 22 0 49.1c0 21.7 14 40.1 33.4 46.6 2.4.4 3.3-1.1 3.3-2.4 0-1.2 0-4.2-.1-8.3-13.6 3-16.5-6.6-16.5-6.6-2.2-5.7-5.4-7.2-5.4-7.2-4.4-3 .3-3 .3-3 4.9.3 7.5 5.1 7.5 5.1 4.4 7.5 11.5 5.3 14.3 4.1.4-3.2 1.7-5.3 3.1-6.5-10.8-1.2-22.2-5.4-22.2-24.2 0-5.3 1.9-9.7 5-13.1-.5-1.2-2.2-6.2.5-12.9 0 0 4.1-1.3 13.4 5 3.9-1.1 8-1.6 12.2-1.6s8.3.5 12.2 1.6c9.3-6.3 13.4-5 13.4-5 2.7 6.7 1 11.7.5 12.9 3.1 3.4 5 7.8 5 13.1 0 18.8-11.4 22.9-22.3 24.1 1.8 1.5 3.3 4.5 3.3 9.1 0 6.5-.1 11.8-.1 13.4 0 1.3.9 2.8 3.4 2.4C84 89.1 98 70.7 98 49.1 98 22 76 0 48.9 0Z"/>
+            </svg>
+          </span>
+          <span class="link-label">
+            GitHub
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
+        </a>
+
+        <a class="card link-card" href="https://www.facebook.com/yutaka.morita.75/" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect width="24" height="24" rx="5" fill="currentColor"/>
+              <path fill="white" d="M14.2 8.05h2.05V4.7c-.35-.05-1.56-.15-2.96-.15-2.93 0-4.94 1.79-4.94 5.07v2.86H5.05v3.75h3.3V24h4.05v-7.77h3.16l.5-3.75H12.4v-2.49c0-1.08.3-1.94 1.8-1.94Z"/>
+            </svg>
+          </span>
+          <span class="link-label">
+            Facebook
+            <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </span>
         </a>
 
       </div>
@@ -248,24 +558,51 @@
       <div class="grid">
 
         <div class="card">
-          <h4>Elena Chat UI Prototype</h4>
+          <h4>Elena — Research Agent Prototype</h4>
+          <span class="card-meta">UX / AI / Interaction</span>
           <p>
-            AI×UX対話体験を探るプロトタイプ。
+            AIとの対話を通じて、
+            人間の思考や感情整理を支援する
+            リサーチエージェントUIプロトタイプ。
           </p>
+          <a class="card-link" href="https://cv63kittyhawk.github.io/ux-agent-elena-en/" target="_blank" rel="noopener noreferrer">
+            View project
+            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
         <div class="card">
-          <h4>UX Character Diagnosis</h4>
+          <h4>Networking Hub & Card Experiment</h4>
+          <span class="card-meta">Branding / UX / AI Collaboration</span>
           <p>
-            キャラクターを通じたUXリサーチ実験。
+            AIと協力しながら、
+            GitHub Pages・名刺・Notion Hubを組み合わせた
+            実験的ネットワーキング導線を制作。
           </p>
+          <a class="card-link" href="https://cv63kittyhawk.github.io/yutaka-morita-site/" target="_blank" rel="noopener noreferrer">
+            View project
+            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
         <div class="card">
-          <h4>Structure Thinking Notes</h4>
+          <h4>Business Structure Diagnosis Tool</h4>
+          <span class="card-meta">Strategy / Structure Thinking</span>
           <p>
-            構造・意思決定・共同体についての思考ログ。
+            企業や組織の課題を、
+            構造・意思決定・関係性の視点から整理する
+            診断フレームワーク実験。
           </p>
+          <a class="card-link" href="https://cv63kittyhawk.github.io/business-ux-design-diagnostic-en/" target="_blank" rel="noopener noreferrer">
+            View project
+            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
       </div>
@@ -277,24 +614,41 @@
       <div class="grid">
 
         <div class="card">
-          <h4>AIと人間の役割分担</h4>
+          <h4>Eight-Layer Structure Analysis</h4>
           <p>
-            AI時代における人間の価値を探究。
+            企業・組織・個人を、
+            複数の構造レイヤーから観察する分析視点。
           </p>
+          <a class="card-link" href="https://medium.com/@cv63kittyhawk/when-i-tried-to-describe-companies-more-structurally-i-ended-up-building-an-ai-career-fit-tool-3bf0918172b9" target="_blank" rel="noopener noreferrer">
+            Read more
+            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
         <div class="card">
-          <h4>UXと意思決定</h4>
+          <h4>Four Elements of Human Motivation</h4>
           <p>
-            人間の判断と体験設計について。
+            人が動く理由を、
+            感情・構造・関係性・環境から捉える試み。
           </p>
+          <a class="card-link" href="https://medium.com/@cv63kittyhawk/why-people-move-a-practical-model-of-will-capability-environment-and-resistance-2e4665fba954" target="_blank" rel="noopener noreferrer">
+            Read more
+            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
         <div class="card">
-          <h4>Invisible Infrastructure</h4>
+          <h4>Capital vs Community Metrics</h4>
           <p>
-            当たり前を支える構造への観察。
+            資本主義的KPIと、
+            共同体における「本当に助かった」という評価の違いを通じて、
+            人間中心の価値構造を探究。
           </p>
+          <span class="card-status">Coming soon</span>
         </div>
 
       </div>
@@ -303,12 +657,11 @@
   </main>
 
   <section class="footer-image">
-    <h2>Perfect moments matter too.</h2>
+    <img class="footer-image-text" src="assets/text_perfect_moments.png" alt="Perfect moments matter too.">
+    <footer>
+      © 2025 Yutaka Morita
+    </footer>
   </section>
-
-  <footer>
-    © 2025 Yutaka Morita
-  </footer>
 
 </body>
 </html>
