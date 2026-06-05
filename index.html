@@ -15,12 +15,22 @@
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      overflow-x: clip;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #f5f7fb;
       color: #111;
       line-height: 1.7;
-      overflow-x: hidden;
     }
 
     a {
@@ -87,6 +97,7 @@
       padding: 0 24px 46px;
       background: white;
       text-align: center;
+      max-width: 100%;
     }
 
     .profile-panel::before {
@@ -173,12 +184,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
       gap: 20px;
     }
 
     .links-grid {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
     }
 
     .card {
