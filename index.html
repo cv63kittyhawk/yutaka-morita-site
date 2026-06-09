@@ -232,7 +232,11 @@
       gap: 6px;
       width: fit-content;
       margin-top: auto;
+      border: 0;
+      background: transparent;
       color: #1F3A5F;
+      cursor: pointer;
+      font: inherit;
       font-size: 13px;
       font-weight: 600;
       line-height: 1.3;
@@ -241,12 +245,6 @@
     .card-link:hover,
     .card-link:focus-visible {
       color: #142a49;
-    }
-
-    .card-link-icon {
-      width: 13px;
-      height: 13px;
-      flex: 0 0 auto;
     }
 
     .card-status {
@@ -265,6 +263,64 @@
 
     .skill-card {
       gap: 18px;
+    }
+
+    .skill-summary {
+      margin-bottom: 0;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag-panel {
+      margin-top: 30px;
+      padding: 24px 0;
+      border-top: 1px dashed #c9d5e3;
+      border-bottom: 1px dashed #c9d5e3;
+    }
+
+    .skill-tag-panel h4 {
+      margin-bottom: 16px;
+      color: #6f7f94;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .skill-tag-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: 20px;
+    }
+
+    .skill-tag-group h5 {
+      margin-bottom: 10px;
+      color: #315c96;
+      font-size: 12px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eef3f8;
+      color: #315c96;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
     }
 
     .card .skill-title {
@@ -431,6 +487,235 @@
       color: #38527a;
     }
 
+    .modal-open {
+      overflow: hidden;
+    }
+
+    body.modal-open {
+      position: fixed;
+      inset-inline: 0;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(8, 18, 34, 0.36);
+      backdrop-filter: blur(18px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+    }
+
+    .modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-shell {
+      display: flex;
+      flex-direction: column;
+      width: min(100%, 1060px);
+      max-height: calc(100vh - 48px);
+      overflow: hidden;
+      border: 1px solid rgba(204, 215, 228, 0.76);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 28px 80px rgba(7, 20, 38, 0.28);
+      transform: translateY(18px) scale(0.985);
+      transition: transform 180ms ease;
+    }
+
+    .modal-overlay.is-open .modal-shell {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px 14px 24px;
+      border-bottom: 1px solid rgba(205, 215, 228, 0.75);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal-kicker {
+      color: #6f7f94;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .modal-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 50%;
+      background: #edf2f8;
+      color: #243852;
+      cursor: pointer;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus-visible {
+      background: #e1e9f3;
+    }
+
+    .modal-close svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .modal-scroll {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-article {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 42px 30px 64px;
+      color: #1c2633;
+    }
+
+    .modal-article h1 {
+      margin-bottom: 24px;
+      color: #152237;
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .modal-article h2 {
+      margin: 42px 0 14px;
+      color: #1F3A5F;
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .modal-article h3 {
+      margin: 30px 0 10px;
+      color: #24466f;
+      font-size: 18px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    .modal-article p {
+      margin: 0 0 16px;
+      color: #3f4b5d;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .modal-article ul {
+      margin: 0 0 18px;
+      padding-left: 22px;
+      color: #3f4b5d;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .modal-lead {
+      padding: 22px 24px;
+      border-left: 4px solid #315c96;
+      border-radius: 16px;
+      background: #f1f5fa;
+    }
+
+    .modal-divider {
+      height: 1px;
+      margin: 34px 0;
+      background: #dbe3ed;
+    }
+
+    .modal-image-placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      margin: 18px 0 28px;
+      border: 1px dashed #9fb0c6;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(49, 92, 150, 0.08), rgba(157, 177, 204, 0.18)),
+        #f7f9fc;
+      color: #63758c;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .summary-table {
+      width: 100%;
+      margin: 14px 0 26px;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 0 0 1px #dce4ee;
+    }
+
+    .summary-table th,
+    .summary-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #dce4ee;
+      color: #3d4b5f;
+      font-size: 14px;
+      line-height: 1.65;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .summary-table th {
+      width: 34%;
+      background: #f2f6fb;
+      color: #1F3A5F;
+      font-weight: 700;
+    }
+
+    .summary-table tr:last-child th,
+    .summary-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .modal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .modal-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #1F3A5F;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .modal-placeholder-note {
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: #f6f8fb;
+      color: #56677d;
+    }
+
     .footer-image {
       position: relative;
       min-height: clamp(330px, 53.35vw, 680px);
@@ -515,6 +800,54 @@
       section h3 {
         gap: 14px;
         font-size: 22px;
+      }
+
+      .modal-overlay {
+        padding: 0;
+        background: rgba(8, 18, 34, 0.24);
+      }
+
+      .modal-shell {
+        width: 100%;
+        max-height: 100vh;
+        border: 0;
+        border-radius: 0;
+      }
+
+      .modal-bar {
+        padding: 12px 12px 12px 18px;
+      }
+
+      .modal-article {
+        padding: 30px 20px 52px;
+      }
+
+      .modal-article h1 {
+        font-size: 32px;
+      }
+
+      .modal-article h2 {
+        margin-top: 34px;
+        font-size: 20px;
+      }
+
+      .modal-image-placeholder {
+        min-height: 210px;
+      }
+
+      .summary-table th,
+      .summary-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .summary-table th {
+        border-bottom: 0;
+        padding-bottom: 4px;
+      }
+
+      .summary-table td {
+        padding-top: 4px;
       }
 
       .footer-image {
@@ -674,12 +1007,9 @@
             企業・組織・個人を、
             複数の構造レイヤーから観察する分析視点。
           </p>
-          <a class="card-link" href="https://note.com/yutaka_morita_d/n/nf474a905b392" target="_blank" rel="noopener noreferrer">
+          <button class="card-link" type="button" data-modal-id="eight-layer">
             Read more
-            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-            </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card">
@@ -688,12 +1018,9 @@
             人が動く理由を、
             感情・構造・関係性・環境から捉える試み。
           </p>
-          <a class="card-link" href="https://note.com/yutaka_morita_d/n/n888a151182b9?sub_rt=share_pw" target="_blank" rel="noopener noreferrer">
+          <button class="card-link" type="button" data-modal-id="motivation">
             Read more
-            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-            </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card">
@@ -721,31 +1048,16 @@
             </svg>
             Data Analytics
           </h4>
-          <div class="skill-group">
-            <h5>Capabilities</h5>
-            <ul class="skill-list">
-              <li>SQL</li>
-              <li>BigQuery</li>
-              <li>Data Structuring</li>
-              <li>Exploratory Analysis</li>
-              <li>Information Organization</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h5>Evidence</h5>
-            <ul class="skill-list">
-              <li>Kaggle dataset exploration</li>
-              <li>BigQuery query practice</li>
-              <li>Structure analysis experiments</li>
-              <li>Data-oriented observation and documentation</li>
-            </ul>
-          </div>
-          <div class="skill-group skill-certificates">
-            <h5>Certificates</h5>
-            <ul class="skill-list">
-              <li>Google Data Analytics Professional Certificate</li>
-            </ul>
-          </div>
+          <p class="skill-summary">
+            構造化・観測・分析を通じて、
+            複雑な情報を整理するための探索。
+            <br><br>
+            単なる数値分析ではなく、
+            「人・組織・行動」の構造を比較可能な形へ整理することに関心があります。
+          </p>
+          <button class="card-link" type="button" data-modal-id="data-analytics">
+            Explore Skill
+          </button>
         </div>
 
         <div class="card skill-card">
@@ -755,31 +1067,16 @@
             </svg>
             AI Collaboration
           </h4>
-          <div class="skill-group">
-            <h5>Capabilities</h5>
-            <ul class="skill-list">
-              <li>Prompt Design</li>
-              <li>AI-assisted Prototyping</li>
-              <li>Human-AI Workflow Design</li>
-              <li>AI-supported Research</li>
-              <li>Rapid Concept Visualization</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h5>Evidence</h5>
-            <ul class="skill-list">
-              <li>Elena Research Agent Prototype</li>
-              <li>AI-assisted networking hub creation</li>
-              <li>AI-supported branding and business card design</li>
-              <li>Iterative experimentation using ChatGPT / Codex</li>
-            </ul>
-          </div>
-          <div class="skill-group skill-certificates">
-            <h5>Certificates</h5>
-            <ul class="skill-list">
-              <li>Google AI Essentials</li>
-            </ul>
-          </div>
+          <p class="skill-summary">
+            AIを単なる自動化ではなく、
+            思考拡張や高速試作パートナーとして活用。
+            <br><br>
+            プロトタイピング、文章整理、構造化を通じて、
+            人間とAIの協働ワークフローを実験しています。
+          </p>
+          <button class="card-link" type="button" data-modal-id="ai-collaboration">
+            Explore Skill
+          </button>
         </div>
 
         <div class="card skill-card">
@@ -789,36 +1086,54 @@
             </svg>
             UX / Structure Thinking
           </h4>
-          <div class="skill-group">
-            <h5>Capabilities</h5>
-            <ul class="skill-list">
-              <li>Information Architecture</li>
-              <li>Human-centered Design</li>
-              <li>Structure Analysis</li>
-              <li>Workflow Thinking</li>
-              <li>Project Organization</li>
-              <li>Cross-domain Concept Design</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h5>Evidence</h5>
-            <ul class="skill-list">
-              <li>Eight-Layer Structure Analysis</li>
-              <li>Human Motivation Frameworks</li>
-              <li>Personal networking hub UX design</li>
-              <li>UX observations from childcare and community experiences</li>
-              <li>Structure-oriented writing and research themes</li>
-            </ul>
-          </div>
-          <div class="skill-group skill-certificates">
-            <h5>Certificates</h5>
-            <ul class="skill-list">
-              <li>Google UX Design Professional Certificate</li>
-              <li>Google Project Management Certificate</li>
-            </ul>
-          </div>
+          <p class="skill-summary">
+            人間・組織・情報構造を、
+            接続や意思決定の視点から観測。
+            <br><br>
+            UIだけでなく、
+            人がどう理解し、迷い、判断するかまで含めて設計対象として捉えています。
+          </p>
+          <button class="card-link" type="button" data-modal-id="ux-structure">
+            Explore Skill
+          </button>
         </div>
 
+      </div>
+
+      <div class="skill-tag-panel">
+        <h4>Skill Tags</h4>
+        <div class="skill-tag-groups">
+          <div class="skill-tag-group">
+            <h5>UX / プロダクト設計系</h5>
+            <div class="skill-tags" aria-label="UX / Product Design skill tags">
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">UX Design</span>
+              <span class="skill-tag">Sketching</span>
+              <span class="skill-tag">Figma</span>
+            </div>
+          </div>
+
+          <div class="skill-tag-group">
+            <h5>AI・構造思考系</h5>
+            <div class="skill-tags" aria-label="AI / Structure Thinking skill tags">
+              <span class="skill-tag">Artificial Intelligence (AI)</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Critical Thinking</span>
+              <span class="skill-tag">Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="skill-tag-group">
+            <h5>推進・運営系</h5>
+            <div class="skill-tags" aria-label="Delivery / Operations skill tags">
+              <span class="skill-tag">Agile Management</span>
+              <span class="skill-tag">Project Management</span>
+              <span class="skill-tag">Career Development</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -835,12 +1150,9 @@
             人間の思考や感情整理を支援する
             リサーチエージェントUIプロトタイプ。
           </p>
-          <a class="card-link" href="https://mire-marlin-cbe.notion.site/Elena-Human-Insight-Interface-3753fa19148180428b6fc849486690b2?source=copy_link" target="_blank" rel="noopener noreferrer">
+          <button class="card-link" type="button" data-modal-id="elena">
             View project
-            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-            </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card">
@@ -851,12 +1163,9 @@
             GitHub Pages・名刺・Notion Hubを組み合わせた
             実験的ネットワーキング導線を制作。
           </p>
-          <a class="card-link" href="https://mire-marlin-cbe.notion.site/AI-Assisted-Networking-Hub-3753fa1914818076a2a7e8af22a26172?source=copy_link" target="_blank" rel="noopener noreferrer">
+          <button class="card-link" type="button" data-modal-id="networking-hub">
             View project
-            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-            </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card">
@@ -867,12 +1176,9 @@
             構造・意思決定・関係性の視点から整理する
             診断フレームワーク実験。
           </p>
-          <a class="card-link" href="https://mire-marlin-cbe.notion.site/Business-UX-Diagnosis-Tool-3753fa19148180af9dc7ec385a698243?source=copy_link" target="_blank" rel="noopener noreferrer">
+          <button class="card-link" type="button" data-modal-id="business-diagnosis">
             View project
-            <svg class="card-link-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
-            </svg>
-          </a>
+          </button>
         </div>
 
       </div>
@@ -892,8 +1198,9 @@
           </div>
           <h4>Internal Engineering Event Presentation</h4>
           <p>
-            Presented at an internal engineering event within the company group,
-            sharing practical perspectives from design and creative workflows.
+            グループ内エンジニアイベントに登壇し、
+            デザインやクリエイティブ実務の視点から、
+            制作現場における課題やワークフローについて共有。
           </p>
           <span class="card-status">Details coming soon</span>
         </div>
@@ -907,8 +1214,8 @@
           </div>
           <h4>International UX / AI Networking</h4>
           <p>
-            Ongoing conversations and exchanges with designers and professionals
-            exploring AI, UX, and human-centered systems.
+            AI、UX、人間中心設計などを探究する
+            国内外のデザイナー・実務者との継続的な交流や対話。
           </p>
           <span class="card-status">Details coming soon</span>
         </div>
@@ -922,8 +1229,9 @@
           </div>
           <h4>Personal Branding &amp; Networking Hub</h4>
           <p>
-            Experimenting with AI-assisted personal branding through GitHub Pages,
-            Notion, business cards, and cross-platform writing.
+            GitHub Pages、名刺、SNS、Notionなどを組み合わせ、
+            AI支援による個人ブランディングと
+            ネットワーキング導線を実験的に構築。
           </p>
           <span class="card-status">Details coming soon</span>
         </div>
@@ -933,12 +1241,561 @@
 
   </main>
 
+  <div class="modal-overlay" id="detail-modal" aria-hidden="true" hidden>
+    <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-bar">
+        <div class="modal-kicker" id="modal-kicker">Detail</div>
+        <button class="modal-close" type="button" aria-label="Close detail">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-scroll" tabindex="-1">
+        <article class="modal-article" id="modal-content"></article>
+      </div>
+    </div>
+  </div>
+
+  <template id="modal-eight-layer" data-kicker="Thinking Theme">
+    <h1 id="modal-title">企業を8層で見るフレームワーク</h1>
+
+    <h2>一言でいうと</h2>
+    <div class="modal-lead">
+      <p>
+        企業を「事業内容」ではなく、思想・構造・成果・摩擦・評価軸まで含めたシステムとして見るためのフレーム。
+      </p>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <h2>全体構造（概念図）</h2>
+    <div class="modal-image-placeholder">画像準備中</div>
+
+    <div class="modal-divider"></div>
+
+    <h2>このフレームの特徴</h2>
+    <p>一般的な企業分析は、</p>
+    <ul>
+      <li>何を売っているか</li>
+      <li>どんな市場か</li>
+      <li>売上はどうか</li>
+    </ul>
+    <p>に寄りやすいです。</p>
+    <p>ただ実際には、企業は</p>
+    <ul>
+      <li>思想</li>
+      <li>構造</li>
+      <li>運用</li>
+      <li>摩擦</li>
+      <li>評価システム</li>
+    </ul>
+    <p>によって動いています。</p>
+    <p>この8層は、企業を「生きているシステム」として見るための整理です。</p>
+
+    <div class="modal-divider"></div>
+
+    <h2>各層の意味</h2>
+
+    <h3>① Why</h3>
+    <p>なぜ存在するか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>問題意識</li>
+      <li>理想</li>
+      <li>違和感</li>
+      <li>存在理由</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>世界をもっと接続したい</li>
+      <li>複雑な技術を自然に使えるようにしたい</li>
+      <li>情報格差を減らしたい</li>
+    </ul>
+    <p>ポイント: 企業の「思想エンジン」。</p>
+
+    <h3>② How</h3>
+    <p>どう価値を成立させるか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>強み</li>
+      <li>方法論</li>
+      <li>戦い方</li>
+      <li>差別化</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>デザイン統合</li>
+      <li>データ活用</li>
+      <li>スピード</li>
+      <li>ネットワーク効果</li>
+    </ul>
+    <p>ポイント: 「その会社らしさ」が最も出る層。</p>
+
+    <h3>③ What</h3>
+    <p>何を提供しているか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>商品</li>
+      <li>サービス</li>
+      <li>肩書き</li>
+      <li>外から見える入口</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>iPhone</li>
+      <li>SaaS</li>
+      <li>コンサル</li>
+      <li>ECサービス</li>
+    </ul>
+    <p>ポイント: 最も見えやすいが、最も誤認されやすい層。</p>
+
+    <h3>④ Structure</h3>
+    <p>どういう構造で動くか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>組織構造</li>
+      <li>役割分担</li>
+      <li>チーム接続</li>
+      <li>意思決定</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>中央集権</li>
+      <li>分散型</li>
+      <li>職能別</li>
+      <li>事業部制</li>
+    </ul>
+    <p>ポイント: 思想が現実に変換される場所。</p>
+
+    <h3>⑤ Output</h3>
+    <p>日々何を生み出しているか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>成果物</li>
+      <li>日常業務</li>
+      <li>生産物</li>
+      <li>外へ出るもの</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>UI</li>
+      <li>コード</li>
+      <li>レポート</li>
+      <li>動画</li>
+      <li>提案資料</li>
+    </ul>
+    <p>ポイント: 「その会社が毎日何を作っているか」。</p>
+
+    <h3>⑥ Outcome</h3>
+    <p>最終的に何を起こしたいか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>行動変化</li>
+      <li>社会変化</li>
+      <li>利用継続</li>
+      <li>売上構造</li>
+      <li>文化形成</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>習慣化</li>
+      <li>エコシステム化</li>
+      <li>利用総量増加</li>
+      <li>ブランド化</li>
+    </ul>
+    <p>ポイント: Outputの先にある「本当の目的」。</p>
+
+    <h3>⑦ Tension</h3>
+    <p>どこで摩擦が起きるか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>理想と現実のズレ</li>
+      <li>強みの副作用</li>
+      <li>組織疲労</li>
+      <li>構造矛盾</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>スピード vs 品質</li>
+      <li>自由 vs 統制</li>
+      <li>成長 vs 一貫性</li>
+    </ul>
+    <p>ポイント: 企業理解で最も重要な層の一つ。</p>
+
+    <h3>⑧ Incentive</h3>
+    <p>何が評価・強化されるか</p>
+    <p>見るもの</p>
+    <ul>
+      <li>評価軸</li>
+      <li>報酬構造</li>
+      <li>昇進条件</li>
+      <li>最適化方向</li>
+    </ul>
+    <p>例</p>
+    <ul>
+      <li>売上</li>
+      <li>スピード</li>
+      <li>精度</li>
+      <li>発信力</li>
+      <li>調整能力</li>
+    </ul>
+    <p>ポイント: 企業が「何へ進化するか」を決める層。</p>
+
+    <div class="modal-divider"></div>
+
+    <h2>8層をまとめると</h2>
+    <h3>上層（思想）</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Why</th>
+          <td>存在理由、問題意識、理想、違和感を見る層。</td>
+        </tr>
+        <tr>
+          <th>How</th>
+          <td>価値の成立方法、強み、戦い方、会社らしさを見る層。</td>
+        </tr>
+        <tr>
+          <th>What</th>
+          <td>商品、サービス、肩書きなど、外から見える入口を見る層。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>中層（運用）</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Structure</th>
+          <td>組織構造、役割分担、チーム接続、意思決定を見る層。</td>
+        </tr>
+        <tr>
+          <th>Output</th>
+          <td>日々の成果物、業務、生産物、外へ出るものを見る層。</td>
+        </tr>
+        <tr>
+          <th>Outcome</th>
+          <td>行動変化、社会変化、利用継続、文化形成を見る層。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>下層（長期力学）</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Tension</th>
+          <td>理想と現実のズレ、強みの副作用、組織疲労、構造矛盾を見る層。</td>
+        </tr>
+        <tr>
+          <th>Incentive</th>
+          <td>評価軸、報酬構造、昇進条件、最適化方向を見る層。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>このモデルで見えること</h2>
+    <p>この8層で見ると、見えやすくなるもの</p>
+    <ul>
+      <li>企業の思想</li>
+      <li>実際の動き方</li>
+      <li>評価される人</li>
+      <li>消耗しやすい人</li>
+      <li>組織の矛盾</li>
+      <li>長期変化方向</li>
+    </ul>
+
+    <h2>特に重要なのは後半2層</h2>
+    <p>多くの企業紹介では、</p>
+    <ul>
+      <li>Why</li>
+      <li>What</li>
+    </ul>
+    <p>は語られます。</p>
+    <p>でも実際に働く上で重要なのは、</p>
+    <ul>
+      <li>Tension</li>
+      <li>Incentive</li>
+    </ul>
+    <p>です。</p>
+
+    <h2>なぜこのモデルを作ったか</h2>
+    <p>出発点はシンプルでした。</p>
+    <p>「企業をもっと包括的に理解したい」という違和感です。</p>
+    <p>単なる事業分析ではなく、</p>
+    <ul>
+      <li>なぜ動くのか</li>
+      <li>どう回るのか</li>
+      <li>何が生まれるのか</li>
+      <li>どこで歪むのか</li>
+    </ul>
+    <p>まで含めて見たかった。</p>
+    <p>その整理として、この8層モデルを置いています。</p>
+
+    <h2>一言でまとめると</h2>
+    <div class="modal-lead">
+      <p>企業を“商品”ではなく、“思想と構造を持つシステム”として見るためのフレームワーク。</p>
+      <p>A company is more than its products.（企業は、商品だけではできていない。）</p>
+    </div>
+
+    <div class="modal-links" aria-label="Related links">
+      <a href="https://note.com/yutaka_morita_d/n/nf474a905b392" target="_blank" rel="noopener noreferrer">note</a>
+      <a href="https://medium.com/@cv63kittyhawk" target="_blank" rel="noopener noreferrer">Medium</a>
+    </div>
+  </template>
+
+  <template id="modal-motivation" data-kicker="Thinking Theme">
+    <h1 id="modal-title">Four Elements of Human Motivation</h1>
+    <div class="modal-placeholder-note">
+      <p>詳細コンテンツをここに追加予定です。カードから外部遷移せず、このモーダル内で読める形にしています。</p>
+    </div>
+  </template>
+
+  <template id="modal-data-analytics" data-kicker="Skill">
+    <h1 id="modal-title">Data Analytics</h1>
+    <div class="modal-lead">
+      <p>
+        構造化・観測・分析を通じて、複雑な情報を整理するための探索。
+      </p>
+    </div>
+
+    <h2>What I Explore</h2>
+    <ul>
+      <li>構造化</li>
+      <li>情報整理</li>
+      <li>SQL</li>
+      <li>データ観測</li>
+    </ul>
+
+    <h2>Evidence</h2>
+    <ul>
+      <li>Kaggle dataset exploration</li>
+      <li>BigQuery query practice</li>
+      <li>Structure analysis experiments</li>
+      <li>Data-oriented observation and documentation</li>
+    </ul>
+
+    <h2>Certificates</h2>
+    <ul>
+      <li>Google Data Analytics Professional Certificate</li>
+    </ul>
+
+    <h2>Experiments</h2>
+    <ul>
+      <li>Kaggle</li>
+      <li>BigQuery</li>
+      <li>構造分析</li>
+    </ul>
+
+    <h2>Learning</h2>
+    <ul>
+      <li>Google Data Analytics</li>
+      <li>SQL and query thinking</li>
+      <li>How to turn messy observations into comparable structures</li>
+    </ul>
+
+    <h2>Future Direction</h2>
+    <p>
+      企業・組織・個人の情報を、比較可能な構造として整理する分析フレームへ発展させていきたい。
+    </p>
+  </template>
+
+  <template id="modal-ai-collaboration" data-kicker="Skill">
+    <h1 id="modal-title">AI Collaboration</h1>
+    <div class="modal-lead">
+      <p>
+        AIを単なる自動化ではなく、思考拡張や高速試作パートナーとして活用。
+      </p>
+    </div>
+
+    <h2>What I Explore</h2>
+    <ul>
+      <li>Prompt Design</li>
+      <li>AI-assisted Prototyping</li>
+      <li>Human-AI Workflow Design</li>
+      <li>AI-supported Research</li>
+      <li>Rapid Concept Visualization</li>
+    </ul>
+
+    <h2>Evidence</h2>
+    <ul>
+      <li>Elena Research Agent Prototype</li>
+      <li>AI-assisted networking hub creation</li>
+      <li>AI-supported branding and business card design</li>
+      <li>Iterative experimentation using ChatGPT / Codex</li>
+    </ul>
+
+    <h2>Certificates</h2>
+    <ul>
+      <li>Google AI Essentials</li>
+    </ul>
+
+    <h2>Experiments</h2>
+    <ul>
+      <li>対話型リサーチエージェントのUI検討</li>
+      <li>個人サイト・名刺・Notion Hub の制作支援</li>
+      <li>文章、構成、プロトタイプの高速反復</li>
+    </ul>
+
+    <h2>Learning</h2>
+    <ul>
+      <li>AIを答えの生成装置ではなく、思考の壁打ち相手として扱うこと</li>
+      <li>曖昧な意図を構造化し、検証可能な形に落とすこと</li>
+      <li>人間の判断を残したまま制作速度を上げること</li>
+    </ul>
+
+    <h2>Future Direction</h2>
+    <p>
+      AIとの協働を、個人の思考整理や意思決定支援に接続するインターフェースとして深めていきたい。
+    </p>
+  </template>
+
+  <template id="modal-ux-structure" data-kicker="Skill">
+    <h1 id="modal-title">UX / Structure Thinking</h1>
+    <div class="modal-lead">
+      <p>
+        人間・組織・情報構造を、接続や意思決定の視点から観測。
+      </p>
+    </div>
+
+    <h2>What I Explore</h2>
+    <ul>
+      <li>Information Architecture</li>
+      <li>Human-centered Design</li>
+      <li>Structure Analysis</li>
+      <li>Workflow Thinking</li>
+      <li>Project Organization</li>
+      <li>Cross-domain Concept Design</li>
+    </ul>
+
+    <h2>Evidence</h2>
+    <ul>
+      <li>Eight-Layer Structure Analysis</li>
+      <li>Human Motivation Frameworks</li>
+      <li>Personal networking hub UX design</li>
+      <li>UX observations from childcare and community experiences</li>
+      <li>Structure-oriented writing and research themes</li>
+    </ul>
+
+    <h2>Certificates</h2>
+    <ul>
+      <li>Google UX Design Professional Certificate</li>
+      <li>Google Project Management Certificate</li>
+    </ul>
+
+    <h2>Experiments</h2>
+    <ul>
+      <li>企業を8層で見るフレームワーク</li>
+      <li>人が動く理由を整理するモチベーション構造</li>
+      <li>GitHub Pages・Notion・SNSをつなぐ個人ハブ設計</li>
+    </ul>
+
+    <h2>Learning</h2>
+    <ul>
+      <li>人の行動は、感情だけでなく構造や環境にも強く影響されること</li>
+      <li>情報設計は、見た目ではなく意思決定のしやすさに関わること</li>
+      <li>組織やサービスを、関係性のシステムとして見ること</li>
+    </ul>
+
+    <h2>Future Direction</h2>
+    <p>
+      UX、組織構造、AI時代の意思決定を横断し、人間がよりよく判断できる構造を探っていきたい。
+    </p>
+  </template>
+
+  <template id="modal-elena" data-kicker="Project">
+    <h1 id="modal-title">Elena — Research Agent Prototype</h1>
+    <div class="modal-placeholder-note">
+      <p>プロジェクト詳細をここに追加予定です。Notionへ飛ばさず、ページ内で読めるプロジェクトビューにできます。</p>
+    </div>
+  </template>
+
+  <template id="modal-networking-hub" data-kicker="Project">
+    <h1 id="modal-title">Networking Hub &amp; Card Experiment</h1>
+    <div class="modal-placeholder-note">
+      <p>プロジェクト詳細をここに追加予定です。制作背景、導線、使用ツール、成果を同じフォーマットで整理できます。</p>
+    </div>
+  </template>
+
+  <template id="modal-business-diagnosis" data-kicker="Project">
+    <h1 id="modal-title">Business Structure Diagnosis Tool</h1>
+    <div class="modal-placeholder-note">
+      <p>プロジェクト詳細をここに追加予定です。診断フレームワークやユースケースをモーダル内で展開できます。</p>
+    </div>
+  </template>
+
   <section class="footer-image">
     <img class="footer-image-text" src="assets/text_perfect_moments.png" alt="Perfect moments matter too.">
     <footer>
       © 2025 Yutaka Morita
     </footer>
   </section>
+
+  <script>
+    const detailModal = document.getElementById('detail-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalKicker = document.getElementById('modal-kicker');
+    const modalScroll = detailModal.querySelector('.modal-scroll');
+    const closeModalButton = detailModal.querySelector('.modal-close');
+    let lastFocusedElement = null;
+    let lastScrollY = 0;
+    let modalHideTimer = null;
+
+    function openModal(modalId, trigger) {
+      const template = document.getElementById(`modal-${modalId}`);
+      if (!template) {
+        return;
+      }
+
+      lastFocusedElement = trigger;
+      lastScrollY = window.scrollY;
+      clearTimeout(modalHideTimer);
+      modalContent.replaceChildren(template.content.cloneNode(true));
+      modalKicker.textContent = template.dataset.kicker || 'Detail';
+      detailModal.hidden = false;
+      detailModal.classList.add('is-open');
+      detailModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      document.body.style.top = `-${lastScrollY}px`;
+      modalScroll.scrollTop = 0;
+      closeModalButton.focus();
+    }
+
+    function closeModal() {
+      detailModal.classList.remove('is-open');
+      detailModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      document.body.style.top = '';
+      window.scrollTo(0, lastScrollY);
+      modalHideTimer = setTimeout(() => {
+        detailModal.hidden = true;
+        modalContent.replaceChildren();
+      }, 180);
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    document.querySelectorAll('[data-modal-id]').forEach((button) => {
+      button.addEventListener('click', () => openModal(button.dataset.modalId, button));
+    });
+
+    closeModalButton.addEventListener('click', closeModal);
+
+    detailModal.addEventListener('click', (event) => {
+      if (event.target === detailModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && detailModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
