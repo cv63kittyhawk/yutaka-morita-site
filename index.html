@@ -293,18 +293,27 @@
     .skill-tag-panel {
       margin-top: 30px;
       padding: 24px 0;
-      border-top: 1px dashed #c9d5e3;
       border-bottom: 1px dashed #c9d5e3;
     }
 
     .skill-tag-panel h4 {
-      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
       color: #6f7f94;
       font-size: 13px;
       font-weight: 700;
       line-height: 1.35;
       text-transform: uppercase;
       letter-spacing: 0;
+    }
+
+    .skill-tag-panel h4::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      border-top: 1px dashed #c9d5e3;
     }
 
     .skill-tag-groups {
@@ -315,7 +324,7 @@
 
     .skill-tag-group h5 {
       margin-bottom: 10px;
-      color: #315c96;
+      color: #7b8797;
       font-size: 12px;
       line-height: 1.4;
       text-transform: uppercase;
@@ -328,8 +337,8 @@
       min-height: 28px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: #eef3f8;
-      color: #315c96;
+      background: #315c96;
+      color: #f7fbff;
       font-size: 12px;
       font-weight: 700;
       line-height: 1.3;
@@ -611,7 +620,7 @@
     }
 
     .modal-article h2 {
-      margin: 42px 0 14px;
+      margin: 56px 0 16px;
       color: #1F3A5F;
       font-size: 22px;
       line-height: 1.35;
@@ -639,6 +648,164 @@
       color: #3f4b5d;
       font-size: 16px;
       line-height: 1.85;
+    }
+
+    .modal-article blockquote {
+      margin: 22px 0 0;
+      padding: 22px 24px;
+      border-left: 4px solid #315c96;
+      border-radius: 16px;
+      background: #f1f5fa;
+      color: #26364b;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .framework-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: -6px 0 28px;
+    }
+
+    .framework-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eef3f8;
+      color: #63758c;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .framework-section {
+      padding: 52px 0 42px;
+      border-top: 1px dashed #c9d5e3;
+    }
+
+    .framework-section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .framework-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .framework-section h3 {
+      margin-top: 22px;
+    }
+
+    .framework-section blockquote {
+      margin-top: 36px;
+    }
+
+    .framework-panel {
+      margin: 18px 0 8px;
+      padding: 22px 24px;
+      border: 1px solid #dce4ee;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+
+    .framework-panel h3::before,
+    .framework-panel h3::after {
+      border-top: 1px dashed #c9d5e3;
+      background: transparent;
+    }
+
+    .framework-image {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 28px auto 34px;
+      border-radius: 18px;
+      box-shadow: 0 18px 42px rgba(31, 58, 95, 0.16);
+    }
+
+    .framework-image--narrow {
+      max-width: 680px;
+    }
+
+    .framework-image--card {
+      background: white;
+      box-shadow:
+        0 0 0 1px rgba(205, 215, 228, 0.72),
+        0 18px 42px rgba(31, 58, 95, 0.16);
+    }
+
+    .framework-link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .framework-link-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 18px;
+      border: 1px solid #dce4ee;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+
+    .framework-link-label {
+      color: #315c96;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .framework-link-card h3 {
+      display: block;
+      margin: 0;
+      color: #1F3A5F;
+      font-size: 17px;
+      line-height: 1.45;
+      text-align: left;
+      text-transform: none;
+    }
+
+    .framework-link-card h3::before,
+    .framework-link-card h3::after {
+      content: none;
+    }
+
+    .framework-link-card p {
+      margin: 0;
+      color: #526174;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .framework-link-status {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: auto;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef2f7;
+      color: #7b8797;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .modal-signature {
+      margin-top: 56px;
+      text-align: right;
+      opacity: 0.72;
+      font-size: 14px;
     }
 
     .modal-lead {
@@ -840,12 +1007,29 @@
       }
 
       .modal-article h2 {
-        margin-top: 34px;
+        margin-top: 44px;
         font-size: 20px;
       }
 
       .modal-image-placeholder {
         min-height: 210px;
+      }
+
+      .framework-meta {
+        margin-bottom: 22px;
+      }
+
+      .framework-section {
+        padding: 40px 0 34px;
+      }
+
+      .framework-panel {
+        padding: 18px;
+      }
+
+      .framework-image {
+        margin: 22px auto 28px;
+        border-radius: 14px;
       }
 
       .summary-table th,
@@ -1015,13 +1199,14 @@
       <div class="grid">
 
         <div class="card">
-          <h4>Eight-Layer Structure Analysis</h4>
+          <h4>The 8-Layer Framework</h4>
           <p>
-            企業・組織・個人を、
-            複数の構造レイヤーから観察する分析視点。
+            企業・個人・組織を、
+            表面的な情報ではなく
+            「構造」から理解するためのフレームワーク。
           </p>
           <button class="card-link" type="button" data-modal-id="eight-layer">
-            Read more
+            Explore Framework →
           </button>
         </div>
 
@@ -1032,7 +1217,7 @@
             感情・構造・関係性・環境から捉える試み。
           </p>
           <button class="card-link" type="button" data-modal-id="motivation">
-            Read more
+            Read more →
           </button>
         </div>
 
@@ -1069,7 +1254,7 @@
             「人・組織・行動」の構造を比較可能な形へ整理することに関心があります。
           </p>
           <button class="card-link" type="button" data-modal-id="data-analytics">
-            Explore Skill
+            Explore Skill →
           </button>
         </div>
 
@@ -1088,7 +1273,7 @@
             人間とAIの協働ワークフローを実験しています。
           </p>
           <button class="card-link" type="button" data-modal-id="ai-collaboration">
-            Explore Skill
+            Explore Skill →
           </button>
         </div>
 
@@ -1107,7 +1292,7 @@
             人がどう理解し、迷い、判断するかまで含めて設計対象として捉えています。
           </p>
           <button class="card-link" type="button" data-modal-id="ux-structure">
-            Explore Skill
+            Explore Skill →
           </button>
         </div>
 
@@ -1117,32 +1302,48 @@
         <h4>Skill Tags</h4>
         <div class="skill-tag-groups">
           <div class="skill-tag-group">
-            <h5>UX / プロダクト設計系</h5>
-            <div class="skill-tags" aria-label="UX / Product Design skill tags">
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">Wireframing</span>
-              <span class="skill-tag">Usability Testing</span>
-              <span class="skill-tag">UX Design</span>
-              <span class="skill-tag">Sketching</span>
-              <span class="skill-tag">Figma</span>
-            </div>
-          </div>
-
-          <div class="skill-tag-group">
-            <h5>AI・構造思考系</h5>
-            <div class="skill-tags" aria-label="AI / Structure Thinking skill tags">
-              <span class="skill-tag">Artificial Intelligence (AI)</span>
-              <span class="skill-tag">Prompt Engineering</span>
+            <h5>Data Analytics</h5>
+            <div class="skill-tags" aria-label="Data Analytics skill tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">BigQuery</span>
               <span class="skill-tag">Critical Thinking</span>
               <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Data Observation</span>
+              <span class="skill-tag">Pattern Recognition</span>
+              <span class="skill-tag">Structure Analysis</span>
+              <span class="skill-tag">Analytical Thinking</span>
+              <span class="skill-tag">Information Organization</span>
             </div>
           </div>
 
           <div class="skill-tag-group">
-            <h5>推進・運営系</h5>
-            <div class="skill-tags" aria-label="Delivery / Operations skill tags">
-              <span class="skill-tag">Agile Management</span>
+            <h5>AI Collaboration</h5>
+            <div class="skill-tags" aria-label="AI Collaboration skill tags">
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Artificial Intelligence</span>
+              <span class="skill-tag">AI Collaboration</span>
+              <span class="skill-tag">Rapid Prototyping</span>
+              <span class="skill-tag">Workflow Design</span>
+              <span class="skill-tag">Human-AI Interaction</span>
+              <span class="skill-tag">Experimentation</span>
+            </div>
+          </div>
+
+          <div class="skill-tag-group">
+            <h5>UX / Structure Thinking</h5>
+            <div class="skill-tags" aria-label="UX / Structure Thinking skill tags">
+              <span class="skill-tag">UX Design</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Sketching</span>
+              <span class="skill-tag">Human-centered Design</span>
+              <span class="skill-tag">Information Architecture</span>
+              <span class="skill-tag">Critical Thinking</span>
+              <span class="skill-tag">Systems Thinking</span>
+              <span class="skill-tag">Decision Design</span>
               <span class="skill-tag">Project Management</span>
+              <span class="skill-tag">Agile Management</span>
               <span class="skill-tag">Career Development</span>
             </div>
           </div>
@@ -1164,7 +1365,7 @@
             リサーチエージェントUIプロトタイプ。
           </p>
           <button class="card-link" type="button" data-modal-id="elena">
-            View project
+            View project →
           </button>
         </div>
 
@@ -1177,7 +1378,7 @@
             実験的ネットワーキング導線を制作。
           </p>
           <button class="card-link" type="button" data-modal-id="networking-hub">
-            View project
+            View project →
           </button>
         </div>
 
@@ -1190,7 +1391,7 @@
             診断フレームワーク実験。
           </p>
           <button class="card-link" type="button" data-modal-id="business-diagnosis">
-            View project
+            View project →
           </button>
         </div>
 
@@ -1270,292 +1471,293 @@
     </div>
   </div>
 
-  <template id="modal-eight-layer" data-kicker="Thinking Theme">
-    <h1 id="modal-title">企業を8層で見るフレームワーク</h1>
+  <template id="modal-eight-layer" data-kicker="Framework">
+    <h1 id="modal-title">The 8-Layer Framework</h1>
+    <div class="framework-meta">
+      <span>Framework</span>
+      <span>Organization Design</span>
+      <span>UX Thinking</span>
+      <span>AI Collaboration</span>
+    </div>
 
-    <h2>一言でいうと</h2>
-    <div class="modal-lead">
+    <section class="framework-section">
+      <h2>企業を8層で見るフレームワーク</h2>
+      <div class="modal-lead">
+        <p>
+          企業・個人・相性を、表面的な情報ではなく「構造」から理解するためのフレームワーク。
+        </p>
+        <p>
+          組織設計、UX、AI導入、キャリア設計など、複雑な関係性を整理するための構造モデル。
+        </p>
+      </div>
+    </section>
+
+    <section class="framework-section">
+      <h2>概要</h2>
+      <p>このフレームワークは、「企業をもっと構造的に理解できないか」という違和感から始まりました。</p>
+      <p>一般的な企業研究では、</p>
+      <ul>
+        <li>事業内容</li>
+        <li>福利厚生</li>
+        <li>採用情報</li>
+        <li>社風</li>
+      </ul>
+      <p>などの表面的な情報が中心になります。</p>
+      <p>しかし実際には、</p>
+      <ul>
+        <li>なぜ存在しているのか</li>
+        <li>どう価値を生み出しているのか</li>
+        <li>どこで摩擦が起きるのか</li>
+        <li>何が評価されるのか</li>
+      </ul>
+      <p>といった“構造そのもの”を見る方が、本質に近いと感じました。</p>
+      <p>このフレームワークは、そうした構造を整理するためのモデルです。</p>
+      <p>また、この構造は企業だけでなく、</p>
+      <ul>
+        <li>個人</li>
+        <li>チーム</li>
+        <li>キャリア</li>
+        <li>AIワークフロー</li>
+      </ul>
+      <p>にも応用できます。</p>
+
+      <img class="framework-image" src="assets/8layer-framework-ja-v1.png" alt="The 8-Layer Framework diagram in Japanese">
+    </section>
+
+    <section class="framework-section">
+      <h2>8つのレイヤー</h2>
+      <table class="summary-table">
+        <tbody>
+          <tr>
+            <th>Why</th>
+            <td>なぜ存在するのか</td>
+          </tr>
+          <tr>
+            <th>How</th>
+            <td>どう価値を成立させるのか</td>
+          </tr>
+          <tr>
+            <th>What</th>
+            <td>何を提供しているのか</td>
+          </tr>
+          <tr>
+            <th>Structure</th>
+            <td>どんな構造で動いているのか</td>
+          </tr>
+          <tr>
+            <th>Output</th>
+            <td>日々何を生み出しているのか</td>
+          </tr>
+          <tr>
+            <th>Outcome</th>
+            <td>最終的に何を起こしたいのか</td>
+          </tr>
+          <tr>
+            <th>Tension</th>
+            <td>どこで摩擦が起きるのか</td>
+          </tr>
+          <tr>
+            <th>Incentive</th>
+            <td>何が評価・強化されるのか</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="framework-panel">
+        <h3>補足</h3>
+        <p>この8層は、思想・実務・長期的変化を同時に見るための構造です。</p>
+        <p>単なる企業紹介ではなく、「その組織が何に最適化されているのか」を見ることを目的としています。</p>
+      </div>
+    </section>
+
+    <section class="framework-section">
+      <h2>3つの構造ドメイン</h2>
+      <p>8つのレイヤーは、さらに3つの大きな領域に整理できます。</p>
+
+      <img class="framework-image framework-image--narrow" src="assets/3layer-structure-ja-v1.png" alt="Three structural domains diagram in Japanese">
+
+      <h3>Purpose Layer</h3>
+      <p>思想・方向性レイヤー</p>
+      <ul>
+        <li>Why</li>
+        <li>How</li>
+        <li>What</li>
+      </ul>
+      <p>組織や個人が、何を目的に存在し、どう価値を出そうとしているか。</p>
+
+      <h3>Operational Layer</h3>
+      <p>実務・運用レイヤー</p>
+      <ul>
+        <li>Structure</li>
+        <li>Output</li>
+        <li>Outcome</li>
+      </ul>
+      <p>実際にどう動き、何を生み出し、何を成立させているか。</p>
+
+      <h3>Dynamic Layer</h3>
+      <p>長期変化・摩擦レイヤー</p>
+      <ul>
+        <li>Tension</li>
+        <li>Incentive</li>
+      </ul>
+      <p>長期運用の中で、何が摩擦になり、何が強化されていくのか。</p>
+    </section>
+
+    <section class="framework-section">
+      <h2>構造相性分析</h2>
+      <p>相性は、単なる「雰囲気」ではなく、</p>
+      <ul>
+        <li>何を重視しているか</li>
+        <li>どう価値を出すか</li>
+        <li>何に最適化されるか</li>
+      </ul>
+      <p>の構造差として見ることができます。</p>
+
+      <img class="framework-image framework-image--card" src="assets/structural-fit-ja-v1.png" alt="Structural fit analysis diagram in Japanese">
+
+      <h3>このモデルで見えるもの</h3>
       <p>
-        企業を「事業内容」ではなく、思想・構造・成果・摩擦・評価軸まで含めたシステムとして見るためのフレーム。
+        重要なのは、「合う / 合わない」を感覚ではなく、どの構造が噛み合うかで見ることです。
       </p>
-    </div>
+      <ul>
+        <li>Why の共鳴</li>
+        <li>Structure の適合</li>
+        <li>Incentive のズレ</li>
+        <li>長期的摩擦</li>
+        <li>消耗ポイント</li>
+      </ul>
 
-    <div class="modal-divider"></div>
+      <div class="framework-panel">
+        <h3>重要な考え方</h3>
+        <p>このモデルは、「合う / 合わない」を断定するためではありません。</p>
+        <p>「どこが噛み合い、どこで摩擦が起きるか」を理解するためのものです。</p>
+      </div>
 
-    <h2>全体構造（概念図）</h2>
-    <div class="modal-image-placeholder">画像準備中</div>
+      <div class="framework-panel">
+        <h3>Key Insight</h3>
+        <p>
+          相性は、「好き嫌い」ではなく、構造の噛み合わせとして見ることができる。
+        </p>
+      </div>
+    </section>
 
-    <div class="modal-divider"></div>
+    <section class="framework-section">
+      <h2>実務への接続</h2>
 
-    <h2>このフレームの特徴</h2>
-    <p>一般的な企業分析は、</p>
-    <ul>
-      <li>何を売っているか</li>
-      <li>どんな市場か</li>
-      <li>売上はどうか</li>
-    </ul>
-    <p>に寄りやすいです。</p>
-    <p>ただ実際には、企業は</p>
-    <ul>
-      <li>思想</li>
-      <li>構造</li>
-      <li>運用</li>
-      <li>摩擦</li>
-      <li>評価システム</li>
-    </ul>
-    <p>によって動いています。</p>
-    <p>この8層は、企業を「生きているシステム」として見るための整理です。</p>
+      <h3>UX / サービス設計</h3>
+      <ul>
+        <li>ユーザー摩擦の可視化</li>
+        <li>体験設計の整理</li>
+        <li>Why と実装の接続</li>
+      </ul>
 
-    <div class="modal-divider"></div>
+      <h3>組織設計</h3>
+      <ul>
+        <li>部門間断絶の可視化</li>
+        <li>評価構造の整理</li>
+        <li>長期摩擦の分析</li>
+      </ul>
 
-    <h2>各層の意味</h2>
+      <h3>AI導入</h3>
+      <ul>
+        <li>責任境界の整理</li>
+        <li>AIと人間の役割分担</li>
+        <li>判断構造の可視化</li>
+      </ul>
 
-    <h3>① Why</h3>
-    <p>なぜ存在するか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>問題意識</li>
-      <li>理想</li>
-      <li>違和感</li>
-      <li>存在理由</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>世界をもっと接続したい</li>
-      <li>複雑な技術を自然に使えるようにしたい</li>
-      <li>情報格差を減らしたい</li>
-    </ul>
-    <p>ポイント: 企業の「思想エンジン」。</p>
+      <h3>採用 / キャリア</h3>
+      <ul>
+        <li>構造相性分析</li>
+        <li>ミスマッチ分析</li>
+        <li>志望理由の深掘り</li>
+      </ul>
 
-    <h3>② How</h3>
-    <p>どう価値を成立させるか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>強み</li>
-      <li>方法論</li>
-      <li>戦い方</li>
-      <li>差別化</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>デザイン統合</li>
-      <li>データ活用</li>
-      <li>スピード</li>
-      <li>ネットワーク効果</li>
-    </ul>
-    <p>ポイント: 「その会社らしさ」が最も出る層。</p>
+      <h3>意思決定</h3>
+      <ul>
+        <li>Why と KPI の接続</li>
+        <li>表面最適化の防止</li>
+        <li>長期影響の整理</li>
+      </ul>
+    </section>
 
-    <h3>③ What</h3>
-    <p>何を提供しているか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>商品</li>
-      <li>サービス</li>
-      <li>肩書き</li>
-      <li>外から見える入口</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>iPhone</li>
-      <li>SaaS</li>
-      <li>コンサル</li>
-      <li>ECサービス</li>
-    </ul>
-    <p>ポイント: 最も見えやすいが、最も誤認されやすい層。</p>
+    <section class="framework-section">
+      <h2>プロンプト化と今後のプロトタイプ</h2>
+      <p>このフレームワークは、まずAIプロンプトとして検証しました。</p>
 
-    <h3>④ Structure</h3>
-    <p>どういう構造で動くか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>組織構造</li>
-      <li>役割分担</li>
-      <li>チーム接続</li>
-      <li>意思決定</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>中央集権</li>
-      <li>分散型</li>
-      <li>職能別</li>
-      <li>事業部制</li>
-    </ul>
-    <p>ポイント: 思想が現実に変換される場所。</p>
+      <h3>現在作成・検証したもの</h3>
+      <ul>
+        <li>8層企業分析プロンプト</li>
+        <li>8層自己分析プロンプト</li>
+        <li>8層相性分析プロンプト</li>
+        <li>ヒアリング型自己分析プロンプト</li>
+      </ul>
 
-    <h3>⑤ Output</h3>
-    <p>日々何を生み出しているか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>成果物</li>
-      <li>日常業務</li>
-      <li>生産物</li>
-      <li>外へ出るもの</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>UI</li>
-      <li>コード</li>
-      <li>レポート</li>
-      <li>動画</li>
-      <li>提案資料</li>
-    </ul>
-    <p>ポイント: 「その会社が毎日何を作っているか」。</p>
+      <h3>今後検証したいもの</h3>
+      <ul>
+        <li>HTML UIプロトタイプ</li>
+        <li>GPTs版</li>
+        <li>面接対策 / 志望理由深掘り版</li>
+      </ul>
 
-    <h3>⑥ Outcome</h3>
-    <p>最終的に何を起こしたいか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>行動変化</li>
-      <li>社会変化</li>
-      <li>利用継続</li>
-      <li>売上構造</li>
-      <li>文化形成</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>習慣化</li>
-      <li>エコシステム化</li>
-      <li>利用総量増加</li>
-      <li>ブランド化</li>
-    </ul>
-    <p>ポイント: Outputの先にある「本当の目的」。</p>
+      <div class="framework-panel">
+        <h3>補足</h3>
+        <p>現時点では、HTML UIプロトタイプはまだ構想段階です。</p>
+        <p>まずはプロンプトとして使えるかを確認し、その後、入力体験をUIとして設計する予定です。</p>
+      </div>
+    </section>
 
-    <h3>⑦ Tension</h3>
-    <p>どこで摩擦が起きるか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>理想と現実のズレ</li>
-      <li>強みの副作用</li>
-      <li>組織疲労</li>
-      <li>構造矛盾</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>スピード vs 品質</li>
-      <li>自由 vs 統制</li>
-      <li>成長 vs 一貫性</li>
-    </ul>
-    <p>ポイント: 企業理解で最も重要な層の一つ。</p>
+    <section class="framework-section">
+      <h2>Related Links / 関連リンク</h2>
+      <p>このフレームワークに関連する記事・実装・投稿をここにまとめます。</p>
+      <p>リンクは順次追加予定です。</p>
 
-    <h3>⑧ Incentive</h3>
-    <p>何が評価・強化されるか</p>
-    <p>見るもの</p>
-    <ul>
-      <li>評価軸</li>
-      <li>報酬構造</li>
-      <li>昇進条件</li>
-      <li>最適化方向</li>
-    </ul>
-    <p>例</p>
-    <ul>
-      <li>売上</li>
-      <li>スピード</li>
-      <li>精度</li>
-      <li>発信力</li>
-      <li>調整能力</li>
-    </ul>
-    <p>ポイント: 企業が「何へ進化するか」を決める層。</p>
+      <h3>公開済み</h3>
+      <div class="framework-link-grid">
+        <div class="framework-link-card">
+          <span class="framework-link-label">note</span>
+          <h3>思想編</h3>
+          <p>人も企業も、「8層」で見ると構造が見えるーー企業研究と自己分析を、同じ型で考えてみる</p>
+          <span class="framework-link-status">Published</span>
+        </div>
 
-    <div class="modal-divider"></div>
+        <div class="framework-link-card">
+          <span class="framework-link-label">Qiita</span>
+          <h3>実装・プロンプト編</h3>
+          <p>企業を8層で構造分析していたら、キャリア相性診断プロンプトまでできた話</p>
+          <span class="framework-link-status">Published</span>
+        </div>
 
-    <h2>8層をまとめると</h2>
-    <h3>上層（思想）</h3>
-    <table class="summary-table">
-      <tbody>
-        <tr>
-          <th>Why</th>
-          <td>存在理由、問題意識、理想、違和感を見る層。</td>
-        </tr>
-        <tr>
-          <th>How</th>
-          <td>価値の成立方法、強み、戦い方、会社らしさを見る層。</td>
-        </tr>
-        <tr>
-          <th>What</th>
-          <td>商品、サービス、肩書きなど、外から見える入口を見る層。</td>
-        </tr>
-      </tbody>
-    </table>
+        <div class="framework-link-card">
+          <span class="framework-link-label">Medium</span>
+          <h3>英語統合版</h3>
+          <p>個人も企業も相性も「8層」で見ると構造が見えてくるという仮説の英語統合版</p>
+          <span class="framework-link-status">Published</span>
+        </div>
+      </div>
 
-    <h3>中層（運用）</h3>
-    <table class="summary-table">
-      <tbody>
-        <tr>
-          <th>Structure</th>
-          <td>組織構造、役割分担、チーム接続、意思決定を見る層。</td>
-        </tr>
-        <tr>
-          <th>Output</th>
-          <td>日々の成果物、業務、生産物、外へ出るものを見る層。</td>
-        </tr>
-        <tr>
-          <th>Outcome</th>
-          <td>行動変化、社会変化、利用継続、文化形成を見る層。</td>
-        </tr>
-      </tbody>
-    </table>
+      <h3>今後追加予定</h3>
+      <div class="framework-link-grid">
+        <div class="framework-link-card">
+          <span class="framework-link-label">Coming soon</span>
+          <h3>HTML / GPTs / Case Studies</h3>
+          <p>LinkedIn投稿、HTML UIプロトタイプ、GPTs版、ケーススタディを順次追加予定です。</p>
+          <span class="framework-link-status">Coming soon</span>
+        </div>
+      </div>
+    </section>
 
-    <h3>下層（長期力学）</h3>
-    <table class="summary-table">
-      <tbody>
-        <tr>
-          <th>Tension</th>
-          <td>理想と現実のズレ、強みの副作用、組織疲労、構造矛盾を見る層。</td>
-        </tr>
-        <tr>
-          <th>Incentive</th>
-          <td>評価軸、報酬構造、昇進条件、最適化方向を見る層。</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="framework-section">
+      <h2>最後に</h2>
+      <p>このフレームワークは、単なる診断ツールではなく、「構造を理解するための視点」として作っています。</p>
+      <p>企業・個人・AI・組織を、同じ構造の上で見られるようにすると、表面的な違和感や摩擦が、かなり説明しやすくなります。</p>
 
-    <h2>このモデルで見えること</h2>
-    <p>この8層で見ると、見えやすくなるもの</p>
-    <ul>
-      <li>企業の思想</li>
-      <li>実際の動き方</li>
-      <li>評価される人</li>
-      <li>消耗しやすい人</li>
-      <li>組織の矛盾</li>
-      <li>長期変化方向</li>
-    </ul>
+      <blockquote>
+        Fit is structural, not emotional.<br>
+        相性は感情ではなく、構造で決まる。
+      </blockquote>
 
-    <h2>特に重要なのは後半2層</h2>
-    <p>多くの企業紹介では、</p>
-    <ul>
-      <li>Why</li>
-      <li>What</li>
-    </ul>
-    <p>は語られます。</p>
-    <p>でも実際に働く上で重要なのは、</p>
-    <ul>
-      <li>Tension</li>
-      <li>Incentive</li>
-    </ul>
-    <p>です。</p>
-
-    <h2>なぜこのモデルを作ったか</h2>
-    <p>出発点はシンプルでした。</p>
-    <p>「企業をもっと包括的に理解したい」という違和感です。</p>
-    <p>単なる事業分析ではなく、</p>
-    <ul>
-      <li>なぜ動くのか</li>
-      <li>どう回るのか</li>
-      <li>何が生まれるのか</li>
-      <li>どこで歪むのか</li>
-    </ul>
-    <p>まで含めて見たかった。</p>
-    <p>その整理として、この8層モデルを置いています。</p>
-
-    <h2>一言でまとめると</h2>
-    <div class="modal-lead">
-      <p>企業を“商品”ではなく、“思想と構造を持つシステム”として見るためのフレームワーク。</p>
-      <p>A company is more than its products.（企業は、商品だけではできていない。）</p>
-    </div>
-
-    <div class="modal-links" aria-label="Related links">
-      <a href="https://note.com/yutaka_morita_d/n/nf474a905b392" target="_blank" rel="noopener noreferrer">note</a>
-      <a href="https://medium.com/@cv63kittyhawk" target="_blank" rel="noopener noreferrer">Medium</a>
-    </div>
+      <p class="modal-signature">Yutaka Morita</p>
+    </section>
   </template>
 
   <template id="modal-motivation" data-kicker="Thinking Theme">
