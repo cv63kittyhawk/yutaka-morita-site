@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06182f" />
   <title>Yutaka Morita</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +36,7 @@
     }
 
     html {
+      background: #06182f;
       overflow-x: clip;
     }
 
@@ -732,6 +734,7 @@
     .footer-image {
       position: relative;
       min-height: clamp(330px, 53.35vw, 680px);
+      padding-bottom: var(--safe-area-bottom);
       background-color: #07101b;
       background:
         url('assets/bg_parfait.png') center center / cover no-repeat;
@@ -816,23 +819,24 @@
       }
 
       .modal-overlay {
-        padding: var(--safe-area-top) 0 var(--safe-area-bottom);
+        padding: 0;
         background: rgba(8, 18, 34, 0.24);
       }
 
       .modal-shell {
         width: 100%;
-        max-height: calc(var(--modal-viewport-height) - var(--safe-area-top) - var(--safe-area-bottom));
+        height: var(--modal-viewport-height);
+        max-height: var(--modal-viewport-height);
         border: 0;
         border-radius: 0;
       }
 
       .modal-bar {
-        padding: 12px 12px 12px 18px;
+        padding: calc(12px + var(--safe-area-top)) 12px 12px 18px;
       }
 
       .modal-article {
-        padding: 30px 20px 52px;
+        padding: 30px 20px calc(52px + var(--safe-area-bottom));
       }
 
       .modal-article h1 {
@@ -1751,6 +1755,7 @@
     const modalKicker = document.getElementById('modal-kicker');
     const modalScroll = detailModal.querySelector('.modal-scroll');
     const closeModalButton = detailModal.querySelector('.modal-close');
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     let lastFocusedElement = null;
     let lastScrollY = 0;
     let modalHideTimer = null;
@@ -1771,6 +1776,7 @@
       detailModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
       document.body.style.top = `-${lastScrollY}px`;
+      themeColorMeta?.setAttribute('content', '#ffffff');
       modalScroll.scrollTop = 0;
       closeModalButton.focus();
     }
@@ -1780,6 +1786,7 @@
       detailModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       document.body.style.top = '';
+      themeColorMeta?.setAttribute('content', '#06182f');
       window.scrollTo(0, lastScrollY);
       modalHideTimer = setTimeout(() => {
         detailModal.hidden = true;
