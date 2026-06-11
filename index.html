@@ -299,6 +299,7 @@
     .skill-tag-panel h4 {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
       margin-bottom: 18px;
       color: #6f7f94;
@@ -309,6 +310,7 @@
       letter-spacing: 0;
     }
 
+    .skill-tag-panel h4::before,
     .skill-tag-panel h4::after {
       content: "";
       height: 1px;
@@ -337,7 +339,7 @@
       min-height: 28px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: #315c96;
+      background: #4f729f;
       color: #f7fbff;
       font-size: 12px;
       font-weight: 700;
@@ -887,6 +889,7 @@
       font-size: 13px;
       font-weight: 700;
       line-height: 1.3;
+      overflow-wrap: anywhere;
     }
 
     .modal-placeholder-note {
@@ -894,6 +897,104 @@
       border-radius: 16px;
       background: #f6f8fb;
       color: #56677d;
+    }
+
+    .project-hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 24px auto 30px;
+      border-radius: 18px;
+      box-shadow: 0 18px 42px rgba(31, 58, 95, 0.16);
+    }
+
+    .project-meta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 28px;
+    }
+
+    .project-external-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #1F3A5F;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .project-external-link svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: 16px;
+      margin: 22px 0 34px;
+    }
+
+    .project-gallery figure {
+      margin: 0;
+      border: 1px solid #dce4ee;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+
+    .project-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .project-gallery figcaption {
+      padding: 12px 14px;
+      color: #526174;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .project-link-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .project-link-group {
+      padding: 18px;
+      border: 1px solid #dce4ee;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+
+    .project-link-group h3 {
+      display: block;
+      margin-top: 0;
+      text-align: left;
+      text-transform: none;
+    }
+
+    .project-link-group h3::before,
+    .project-link-group h3::after {
+      content: none;
+    }
+
+    .project-link-group p {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
     }
 
     .footer-image {
@@ -1213,11 +1314,10 @@
         <div class="card">
           <h4>Four Elements of Human Motivation</h4>
           <p>
-            人が動く理由を、
-            感情・構造・関係性・環境から捉える試み。
+            人・組織・社会が「なぜ動くのか」「なぜ動かないのか」を構造的に捉えるためのフレームワーク。
           </p>
           <button class="card-link" type="button" data-modal-id="motivation">
-            Read more →
+            Explore Framework →
           </button>
         </div>
 
@@ -1383,7 +1483,7 @@
         </div>
 
         <div class="card">
-          <h4>Business Structure Diagnosis Tool</h4>
+          <h4>Business UX Diagnosis Tool</h4>
           <span class="card-meta">Strategy / Structure Thinking</span>
           <p>
             企業や組織の課題を、
@@ -1760,11 +1860,302 @@
     </section>
   </template>
 
-  <template id="modal-motivation" data-kicker="Thinking Theme">
+  <template id="modal-motivation" data-kicker="Framework">
     <h1 id="modal-title">Four Elements of Human Motivation</h1>
-    <div class="modal-placeholder-note">
-      <p>詳細コンテンツをここに追加予定です。カードから外部遷移せず、このモーダル内で読める形にしています。</p>
+    <div class="framework-meta">
+      <span>Four-Factor Model</span>
+      <span>Human Motivation</span>
+      <span>UX Thinking</span>
+      <span>Decision Support</span>
     </div>
+
+    <section class="framework-section">
+      <h2>四因子モデル</h2>
+      <div class="modal-lead">
+        <p>
+          人・組織・社会が「なぜ動くのか」「なぜ動かないのか」を構造的に捉えるためのフレームワーク。
+        </p>
+      </div>
+    </section>
+
+    <section class="framework-section">
+      <h2>Overview</h2>
+      <p>このプロジェクトは、「人はなぜ動くのか？」という問いから始まりました。</p>
+      <p>
+        仕事、組織、採用、UX、歴史を観察していると、能力が高い人が動けなかったり、逆に十分な準備がない人が大きな成果を出したりする場面があります。
+      </p>
+      <p>多くの場合、</p>
+      <ul>
+        <li>やる気</li>
+        <li>能力</li>
+        <li>性格</li>
+      </ul>
+      <p>で説明されますが、それだけでは説明しきれない違和感がありました。</p>
+      <p>
+        そこで、クラウゼヴィッツの「意志」と「能力」の考え方を出発点に、環境と抑止力を加え、より広い領域に適用できる行動モデルとして整理したものが四因子モデルです。
+      </p>
+
+      <img class="framework-image" src="assets/four-factor-model-ja-v1.png" alt="Four-factor model infographic in Japanese">
+      <img class="framework-image framework-image--narrow" src="assets/four-factor-model-en-v1.png" alt="Four-factor model infographic in English">
+    </section>
+
+    <section class="framework-section">
+      <h2>Initial Question</h2>
+      <p>最初にあった問いや違和感。</p>
+      <ul>
+        <li>なぜ良い提案が通らないのか</li>
+        <li>なぜ優秀な人が動けないのか</li>
+        <li>なぜ組織改革は止まるのか</li>
+        <li>なぜユーザーは行動しないのか</li>
+        <li>なぜ歴史は特定の方向へ進んでいくのか</li>
+      </ul>
+      <p>個別に見えるこれらの現象に、共通する構造があるのではないかと考えました。</p>
+    </section>
+
+    <section class="framework-section">
+      <h2>Core Hypothesis</h2>
+      <p>このプロジェクトで検証している仮説。</p>
+      <ul>
+        <li>行動は「やる気」だけで決まらない</li>
+        <li>能力だけでは成果は生まれない</li>
+        <li>環境は過小評価されがちである</li>
+        <li>抑止力は最も見落とされやすい要因である</li>
+        <li>同じ構造は個人・組織・社会に適用できる</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Structure</h2>
+      <div class="framework-panel">
+        <h3>基本式</h3>
+        <p>行動発生 ＝ 環境 × 意志 × 能力 − 抑止力</p>
+      </div>
+
+      <h3>環境（Environment）</h3>
+      <p>行動を可能、または困難にする外部条件。</p>
+      <ul>
+        <li>制度</li>
+        <li>市場</li>
+        <li>タイミング</li>
+        <li>人間関係</li>
+        <li>文化</li>
+        <li>情報アクセス</li>
+      </ul>
+
+      <h3>意志（Will）</h3>
+      <p>行動したい理由や目的。</p>
+      <ul>
+        <li>動機</li>
+        <li>欲求</li>
+        <li>目的</li>
+        <li>優先順位</li>
+        <li>継続意思</li>
+      </ul>
+
+      <h3>能力（Capability）</h3>
+      <p>意志を実際の行動へ変換する力。</p>
+      <ul>
+        <li>スキル</li>
+        <li>知識</li>
+        <li>資源</li>
+        <li>実行力</li>
+        <li>組織力</li>
+      </ul>
+
+      <h3>抑止力（Resistance）</h3>
+      <p>行動を止める摩擦や障壁。</p>
+      <ul>
+        <li>不安</li>
+        <li>リスク</li>
+        <li>複雑さ</li>
+        <li>社内政治</li>
+        <li>規制</li>
+        <li>疲労</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Visual Frameworks</h2>
+      <h3>作成済み</h3>
+      <ul>
+        <li>four-factor-model-en-v1.png</li>
+        <li>four-factor-model-ja-v1.png</li>
+      </ul>
+      <h3>構想中</h3>
+      <ul>
+        <li>four-factor-model-carousel-v1.png</li>
+        <li>four-factor-model-applications-v1.png</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Experiments</h2>
+      <h3>概念検証</h3>
+      <ul>
+        <li>歴史事例への適用</li>
+        <li>組織課題への適用</li>
+        <li>採用判断への適用</li>
+        <li>UX行動分析への適用</li>
+      </ul>
+
+      <h3>発信実験</h3>
+      <ul>
+        <li>note記事</li>
+        <li>Medium記事</li>
+        <li>Qiita記事</li>
+        <li>LinkedIn投稿</li>
+        <li>X投稿</li>
+      </ul>
+
+      <h3>可視化</h3>
+      <ul>
+        <li>英語版インフォグラフィック</li>
+        <li>日本語版インフォグラフィック</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>What Worked</h2>
+      <h3>分野横断性</h3>
+      <p>同じモデルが以下の領域で使える可能性が見えました。</p>
+      <ul>
+        <li>UX</li>
+        <li>組織</li>
+        <li>採用</li>
+        <li>人間関係</li>
+        <li>戦略</li>
+        <li>歴史</li>
+      </ul>
+
+      <h3>図解化</h3>
+      <p>文章だけよりも、図解化した方が圧倒的に理解されやすいことが分かりました。</p>
+
+      <h3>対話の質向上</h3>
+      <p>「やる気がない」「能力がない」といった説明よりも、構造で議論できるようになりました。</p>
+    </section>
+
+    <section class="framework-section">
+      <h2>Key Learnings</h2>
+      <ul>
+        <li>人は正しいから動くわけではない</li>
+        <li>多くの問題は個人より構造にある</li>
+        <li>抑止力は想像以上に強い</li>
+        <li>行動には条件の整列が必要</li>
+        <li>シンプルなモデルほど対話を生みやすい</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Practical Applications</h2>
+      <table class="summary-table">
+        <tbody>
+          <tr>
+            <th>UX</th>
+            <td>行動分析、コンバージョン改善、フリクション分析</td>
+          </tr>
+          <tr>
+            <th>組織</th>
+            <td>組織診断、変革設計、意思決定支援</td>
+          </tr>
+          <tr>
+            <th>採用</th>
+            <td>候補者評価、組織適合分析、キャリア設計</td>
+          </tr>
+          <tr>
+            <th>戦略</th>
+            <td>実行可能性分析、ステークホルダー分析</td>
+          </tr>
+          <tr>
+            <th>歴史</th>
+            <td>戦争、政治、社会変化</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="framework-section">
+      <h2>Current Status</h2>
+      <h3>完成済み</h3>
+      <ul>
+        <li>四因子モデル定義</li>
+        <li>英語版図解</li>
+        <li>日本語版図解</li>
+        <li>note記事ドラフト</li>
+        <li>Medium記事ドラフト</li>
+        <li>Qiita記事ドラフト</li>
+      </ul>
+
+      <h3>検証中</h3>
+      <ul>
+        <li>LinkedIn発信</li>
+        <li>X発信</li>
+        <li>実務適用事例収集</li>
+      </ul>
+
+      <h3>構想中</h3>
+      <ul>
+        <li>信頼関係モデル</li>
+        <li>採用モデル</li>
+        <li>組織変動モデル</li>
+        <li>歴史分析シリーズ</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Future Directions</h2>
+      <ul>
+        <li>実際の組織事例への適用</li>
+        <li>診断チェックリスト化</li>
+        <li>派生モデルの開発</li>
+        <li>AIとの対話支援ツール化</li>
+        <li>インタラクティブ版の制作</li>
+      </ul>
+    </section>
+
+    <section class="framework-section">
+      <h2>Related Links</h2>
+      <p>公開済みの記事と、今後追加予定の関連リンクです。</p>
+      <div class="framework-link-grid">
+        <a class="framework-link-card" href="https://note.com/yutaka_morita_d/n/n888a151182b9?sub_rt=share_pw" target="_blank" rel="noopener noreferrer">
+          <span class="framework-link-label">note</span>
+          <h3>四因子モデル</h3>
+          <p>人がなぜ動くのかを、環境・意志・能力・抑止力から整理する記事。</p>
+          <span class="framework-link-status">Published</span>
+        </a>
+
+        <a class="framework-link-card" href="https://medium.com/@cv63kittyhawk/why-people-move-a-practical-model-of-will-capability-environment-and-resistance-2e4665fba954" target="_blank" rel="noopener noreferrer">
+          <span class="framework-link-label">Medium</span>
+          <h3>English Article</h3>
+          <p>Why people move: a practical model of will, capability, environment, and resistance.</p>
+          <span class="framework-link-status">Published</span>
+        </a>
+
+        <div class="framework-link-card">
+          <span class="framework-link-label">Coming soon</span>
+          <h3>LinkedIn / X / Qiita</h3>
+          <p>LinkedIn投稿、X投稿、Qiita、Case Study、Interactive Prototype、Framework Libraryを順次追加予定です。</p>
+          <span class="framework-link-status">Coming soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="framework-section">
+      <h2>Closing</h2>
+      <p>このプロジェクトは、「なぜ動くのか」という単純な問いから始まりました。</p>
+      <p>
+        しかし整理を進めるうちに、それは個人の問題ではなく、組織や社会、歴史にも共通する構造かもしれないと感じるようになりました。
+      </p>
+      <p>四因子モデルは答えを与えるためのものではありません。</p>
+      <p>
+        見えていなかった条件や摩擦を可視化し、より良い意思決定や対話を支援するためのレンズです。
+      </p>
+
+      <blockquote>
+        人は正しさでは動かない。条件が揃った時に動く。
+      </blockquote>
+
+      <p class="modal-signature">Yutaka Morita</p>
+    </section>
   </template>
 
   <template id="modal-data-analytics" data-kicker="Skill">
@@ -1920,24 +2311,717 @@
   </template>
 
   <template id="modal-elena" data-kicker="Project">
-    <h1 id="modal-title">Elena — Research Agent Prototype</h1>
-    <div class="modal-placeholder-note">
-      <p>プロジェクト詳細をここに追加予定です。Notionへ飛ばさず、ページ内で読めるプロジェクトビューにできます。</p>
+    <h1 id="modal-title">Elena — Human Insight Interface</h1>
+
+    <div class="project-meta-links" aria-label="Elena project links">
+      <a class="project-external-link" href="https://cv63kittyhawk.github.io/ux-agent-elena/" target="_blank" rel="noopener noreferrer">
+        Live Demo
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
+      <a class="project-external-link" href="https://github.com/cv63kittyhawk/ux-agent-elena" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
+    </div>
+
+    <img class="project-hero-image" src="assets/img_elena_ogp.png" alt="Elena Human Insight Interface OGP visual">
+
+    <h2>Overview</h2>
+    <div class="modal-lead">
+      <p>
+        キャラクター型AIチャットUIプロトタイプ。
+      </p>
+      <p>
+        「AIが道具ではなく、“存在感”を持ったら体験はどう変わるのか？」をテーマに制作。
+      </p>
+    </div>
+
+    <p>AIインタビューやAI UXについて考える中で、</p>
+    <ul>
+      <li>AI相手だと理屈っぽくなる</li>
+      <li>感情が出にくい</li>
+      <li>雑談が減る</li>
+    </ul>
+    <p>という感覚がありました。</p>
+
+    <blockquote>
+      Human insight still needs human contact.<br>
+      人間の洞察には、やはり人間同士の接触が必要。
+    </blockquote>
+
+    <p>この仮説から、Character-based AI Interaction を試作しました。</p>
+    <p>単一HTML + GitHub Pagesのみで軽量に構築しています。</p>
+
+    <h2>Concept</h2>
+
+    <h3>Human-centered AI</h3>
+    <p>AIを「効率化ツール」としてではなく、</p>
+    <ul>
+      <li>会話相手</li>
+      <li>思考補助</li>
+      <li>空気感を持つ存在</li>
+    </ul>
+    <p>として設計できないかを探索しました。</p>
+
+    <h3>AI Collaboration</h3>
+    <p>今回の制作では、AIに以下を補助してもらいました。</p>
+    <ul>
+      <li>OGP画像</li>
+      <li>CSS調整</li>
+      <li>README整理</li>
+      <li>UI改善</li>
+      <li>投稿文草案</li>
+    </ul>
+    <p>ただし、コンセプト、UX判断、世界観、違和感検知は人間側に残っています。</p>
+
+    <h3>Momentum over Perfection</h3>
+    <blockquote>
+      AIは「全部やる」より、人間が止まらず前進できるようにする。
+    </blockquote>
+    <p>今回強く感じたのは、この方向でAIの価値が大きいことでした。</p>
+
+    <h2>Screenshot Gallery</h2>
+    <div class="project-gallery">
+      <figure>
+        <img src="assets/img_elena_screenshot.png" alt="Elena main UI screenshot">
+        <figcaption>Main UI</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img_elena_screenshot_chat.png" alt="Elena conversation UI screenshot">
+        <figcaption>Conversation UI</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img_elena_scifi.png" alt="Elena character visual">
+        <figcaption>Character</figcaption>
+      </figure>
+    </div>
+
+    <h2>Key Themes</h2>
+    <div class="skill-tags" aria-label="Elena key themes">
+      <span class="skill-tag">UX</span>
+      <span class="skill-tag">Human-centered AI</span>
+      <span class="skill-tag">Character Interaction</span>
+      <span class="skill-tag">Presence Design</span>
+      <span class="skill-tag">Conversational UI</span>
+      <span class="skill-tag">Emotional Interface Design</span>
+      <span class="skill-tag">AI Collaboration</span>
+      <span class="skill-tag">Lightweight Prototyping</span>
+    </div>
+
+    <h2>What I Learned</h2>
+
+    <h3>Character UI creates presence</h3>
+    <p>キャラクターが存在することで、単なるチャットUIより「話しかけやすさ」が生まれる。</p>
+
+    <h3>AI reduces startup friction</h3>
+    <p>AIの価値は、完全自動化よりも、</p>
+    <ul>
+      <li>面倒で止まる</li>
+      <li>初動が重い</li>
+      <li>試作前に疲れる</li>
+    </ul>
+    <p>を超える補助にある感覚が強かったです。</p>
+
+    <h3>Lightweight prototypes move faster</h3>
+    <p>Single HTML + GitHub Pages だけでも、かなり多くの仮説検証ができました。</p>
+
+    <h2>Future Ideas</h2>
+    <ul>
+      <li>OpenAI API integration</li>
+      <li>Emotion-aware interaction</li>
+      <li>Real-time character animation</li>
+      <li>Voice interaction</li>
+      <li>Multiple character modes</li>
+      <li>Presence-based communication</li>
+      <li>AI-assisted UX research mode</li>
+    </ul>
+
+    <h2>Links</h2>
+    <div class="project-link-list">
+      <div class="project-link-group">
+        <h3>Live Prototype</h3>
+        <p>
+          JP:
+          <a class="project-external-link" href="https://cv63kittyhawk.github.io/ux-agent-elena/" target="_blank" rel="noopener noreferrer">
+            ux-agent-elena
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+        <p>
+          EN:
+          <a class="project-external-link" href="https://cv63kittyhawk.github.io/ux-agent-elena-en/" target="_blank" rel="noopener noreferrer">
+            ux-agent-elena-en
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-link-group">
+        <h3>GitHub</h3>
+        <p>
+          JP:
+          <a class="project-external-link" href="https://github.com/cv63kittyhawk/ux-agent-elena" target="_blank" rel="noopener noreferrer">
+            cv63kittyhawk/ux-agent-elena
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+        <p>
+          EN:
+          <a class="project-external-link" href="https://github.com/cv63kittyhawk/ux-agent-elena-en/" target="_blank" rel="noopener noreferrer">
+            cv63kittyhawk/ux-agent-elena-en
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+      </div>
     </div>
   </template>
 
   <template id="modal-networking-hub" data-kicker="Project">
-    <h1 id="modal-title">Networking Hub &amp; Card Experiment</h1>
-    <div class="modal-placeholder-note">
-      <p>プロジェクト詳細をここに追加予定です。制作背景、導線、使用ツール、成果を同じフォーマットで整理できます。</p>
+    <h1 id="modal-title">AI-Assisted Networking Hub &amp; Card Experiment</h1>
+
+    <div class="project-meta-links" aria-label="Networking Hub project links">
+      <a class="project-external-link" href="https://github.com/cv63kittyhawk/yutaka-morita-site/tree/main" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
     </div>
+
+    <h2>Overview</h2>
+    <div class="modal-lead">
+      <p>
+        AIとの協働によって制作した、個人ネットワーキング用Hubサイトと名刺プロジェクト。
+      </p>
+    </div>
+    <p>
+      このプロジェクトは単なるポートフォリオ制作ではなく、「人はどのように信頼を形成するのか」という問いから始まりました。
+    </p>
+    <p>
+      LinkedInやXで発信を続ける中で、短い投稿や限られた接触時間だけでは、人となりや思考背景を十分に伝えることが難しいと感じていました。
+    </p>
+    <p>また、ネットワーキングの場では、</p>
+    <ul>
+      <li>毎回自己紹介を繰り返す</li>
+      <li>伝えたいことが十分に伝わらない</li>
+      <li>相手との共通文脈がない状態から始まる</li>
+    </ul>
+    <p>といったコミュニケーションコストも存在します。</p>
+    <p>
+      そこで、「空いている時間に少しずつ相手を知れる仕組み」としてHubを制作することにしました。
+    </p>
+    <p>
+      制作を進める中で、このプロジェクトは単なる自己紹介サイトではなく、「個人を題材にしたHuman-Centered Brandingの実験」へと発展していきました。
+    </p>
+
+    <h2>Concept</h2>
+
+    <h3>仮説</h3>
+    <p>
+      長期的な信頼形成においては、「何を作ったか」だけでなく、「どう考えているか」「どんな探索をしているか」の方が重要なのではないか。
+    </p>
+    <p>
+      また、AI時代には個人も小さなメディアやブランドとして、自身の文脈を設計する必要が出てくるのではないか。
+    </p>
+
+    <h3>思想</h3>
+    <p>
+      ブランディングとは、「自分を良く見せること」ではなく、「どの側面を最初に見てもらうかを設計すること」に近いと考えています。
+    </p>
+    <p>
+      実際の人間はもっと複雑で多面的ですが、限られた接触時間の中では全てを伝えることはできません。
+    </p>
+    <p>だからこそ、</p>
+    <ul>
+      <li>何を見せるか</li>
+      <li>何を見せないか</li>
+      <li>どこに余白を残すか</li>
+    </ul>
+    <p>を設計対象として捉えました。</p>
+
+    <h3>UX観点</h3>
+    <p>このHubでは、</p>
+    <ul>
+      <li>情報を詰め込みすぎない</li>
+      <li>実績を並べすぎない</li>
+      <li>過剰に自己主張しない</li>
+    </ul>
+    <p>ことを意識しました。</p>
+    <p>代わりに、</p>
+    <ul>
+      <li>思想</li>
+      <li>探索テーマ</li>
+      <li>学習履歴</li>
+      <li>プロジェクト</li>
+      <li>接続実績</li>
+    </ul>
+    <p>などを通じて、「どういう人なのか」が自然に伝わる構造を目指しました。</p>
+    <p>
+      また名刺も含めて、「なんでパフェなんですか？」という会話の入口を設計しています。
+    </p>
+
+    <h3>AIとの役割分担</h3>
+    <p>AIは、以下を担当しました。</p>
+    <ul>
+      <li>アイデア発散</li>
+      <li>ビジュアル探索</li>
+      <li>構造整理</li>
+      <li>HTML実装支援</li>
+      <li>名刺デザイン試作</li>
+    </ul>
+    <p>人間側は、以下を担当しました。</p>
+    <ul>
+      <li>方向性</li>
+      <li>世界観</li>
+      <li>情報設計</li>
+      <li>判断</li>
+      <li>最終意思決定</li>
+    </ul>
+    <p>このプロジェクトは、Human-AI Collaboration の実践実験でもあります。</p>
+
+    <h3>構造設計</h3>
+    <p>Hub全体は、以下の流れで設計しました。</p>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Identity</th>
+          <td>人となりや関心領域の入口</td>
+        </tr>
+        <tr>
+          <th>Thinking Themes</th>
+          <td>思想や探索テーマの可視化</td>
+        </tr>
+        <tr>
+          <th>Skills</th>
+          <td>学習・実践している領域</td>
+        </tr>
+        <tr>
+          <th>Projects</th>
+          <td>仮説を形にした実験</td>
+        </tr>
+        <tr>
+          <th>Outcomes &amp; Connections</th>
+          <td>接続・発信・実践の記録</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      これは成果物一覧ではなく、思想・学習・仮説・実験・接続まで含めて可視化することを目的としています。
+    </p>
+    <p>
+      将来的には、「企業ブランディング戦略を個人スケールで実践・観測するケーススタディ」として発展させることも視野に入れています。
+    </p>
+
+    <h2>Key Themes</h2>
+    <div class="skill-tags" aria-label="Networking Hub key themes">
+      <span class="skill-tag">Human-Centered Branding</span>
+      <span class="skill-tag">UX</span>
+      <span class="skill-tag">AI Collaboration</span>
+      <span class="skill-tag">Structure Thinking</span>
+      <span class="skill-tag">Trust Building</span>
+      <span class="skill-tag">Identity Design</span>
+      <span class="skill-tag">Information Architecture</span>
+      <span class="skill-tag">Community Design</span>
+      <span class="skill-tag">Human Systems</span>
+      <span class="skill-tag">Networking</span>
+      <span class="skill-tag">Communication Design</span>
+    </div>
+
+    <h2>Concept Visuals</h2>
+
+    <h3>Site Concept</h3>
+    <div class="project-gallery">
+      <figure>
+        <img src="assets/image_site_concept.png" alt="Initial site visual concept">
+        <figcaption>サイトコンセプト</figcaption>
+      </figure>
+    </div>
+
+    <h3>Business Card Concepts</h3>
+    <div class="project-gallery">
+      <figure>
+        <img src="assets/img_card_conceptv1_front.png" alt="Business card concept version 1 front">
+        <figcaption>名刺コンセプト v1</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img_card_conceptv2_front.png" alt="Business card concept version 2 front">
+        <figcaption>名刺コンセプト v2</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img_card_concept_back.png" alt="Business card concept back">
+        <figcaption>名刺コンセプト 裏面</figcaption>
+      </figure>
+    </div>
+
+    <h3>Printed Business Cards</h3>
+    <div class="project-gallery">
+      <figure>
+        <img src="assets/img_card_front.png" alt="Printed business card front">
+        <figcaption>完成した名刺印刷版 表</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img_card_back.png" alt="Printed business card back">
+        <figcaption>完成した名刺印刷版 裏</figcaption>
+      </figure>
+    </div>
+
+    <h2>What I Learned</h2>
+
+    <h3>実装して見えた課題</h3>
+    <p>サイト制作そのものよりも、</p>
+    <ul>
+      <li>情報の優先順位</li>
+      <li>カテゴリ設計</li>
+      <li>見せる情報と見せない情報</li>
+    </ul>
+    <p>を決める方が難しかったです。</p>
+    <p>
+      また、プロジェクトが増えるほど、「リンク集化」する危険性があることも見えてきました。
+    </p>
+
+    <h3>AI活用で分かったこと</h3>
+    <p>AIによって、</p>
+    <ul>
+      <li>試作速度</li>
+      <li>比較検討</li>
+      <li>デザイン探索</li>
+    </ul>
+    <p>は大幅に高速化しました。</p>
+    <p>一方で、世界観・一貫性・判断は依然として人間側が担う必要がありました。</p>
+
+    <h3>UX上の気づき</h3>
+    <p>
+      説明を増やすことよりも、余白を残すことの方が、興味や会話を生みやすい場合があります。
+    </p>
+    <p>
+      また、「何を載せるか」以上に、「何を載せないか」が体験を大きく左右することを再認識しました。
+    </p>
+
+    <h3>想定と現実のズレ</h3>
+    <p>当初はシンプルな自己紹介サイトを想定していました。</p>
+    <p>しかし制作を続ける中で、</p>
+    <ul>
+      <li>ブランディング</li>
+      <li>信頼形成</li>
+      <li>ネットワーキング</li>
+      <li>AI協働</li>
+    </ul>
+    <p>などのテーマが次々と接続され、結果的に長期的な実験環境へと変化していきました。</p>
+
+    <h2>Future Ideas</h2>
+    <ul>
+      <li>Thinking Themesの体系化</li>
+      <li>AI支援型ナビゲーション</li>
+      <li>多言語対応</li>
+      <li>UXケーススタディ追加</li>
+      <li>信頼形成プロセスの可視化</li>
+      <li>ネットワーキング実験ログ蓄積</li>
+      <li>Human-AI Workflowの整理</li>
+      <li>個人実験から企業ブランディングへの応用</li>
+    </ul>
+
+    <h2>Links</h2>
+    <div class="project-link-list">
+      <div class="project-link-group">
+        <h3>Live Demo</h3>
+        <p>This Site</p>
+      </div>
+
+      <div class="project-link-group">
+        <h3>GitHub</h3>
+        <p>
+          Repository:
+          <a class="project-external-link" href="https://github.com/cv63kittyhawk/yutaka-morita-site/tree/main" target="_blank" rel="noopener noreferrer">
+            cv63kittyhawk/yutaka-morita-site
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-link-group">
+        <h3>Other</h3>
+        <p>Business Card Prototype</p>
+      </div>
+    </div>
+
+    <h2>Related Thinking Themes</h2>
+    <div class="skill-tags" aria-label="Networking Hub related thinking themes">
+      <span class="skill-tag">Human-Centered AI</span>
+      <span class="skill-tag">Quiet Branding</span>
+      <span class="skill-tag">Trust Building Systems</span>
+      <span class="skill-tag">Structure Thinking</span>
+      <span class="skill-tag">Community vs Organization</span>
+      <span class="skill-tag">Human Motivation Frameworks</span>
+      <span class="skill-tag">AI and Human Collaboration</span>
+      <span class="skill-tag">Value Persistence Chain</span>
+    </div>
+
+    <h2>Core Insight</h2>
+    <blockquote>
+      ブランディングとは自分を大きく見せることではなく、相手が自分を理解しやすくなるように文脈を設計することなのかもしれない。
+    </blockquote>
   </template>
 
   <template id="modal-business-diagnosis" data-kicker="Project">
-    <h1 id="modal-title">Business Structure Diagnosis Tool</h1>
-    <div class="modal-placeholder-note">
-      <p>プロジェクト詳細をここに追加予定です。診断フレームワークやユースケースをモーダル内で展開できます。</p>
+    <h1 id="modal-title">Business UX Diagnosis Tool</h1>
+
+    <div class="project-meta-links" aria-label="Business UX Diagnosis Tool project links">
+      <a class="project-external-link" href="https://cv63kittyhawk.github.io/business-diagnosis-tool/" target="_blank" rel="noopener noreferrer">
+        Live Demo
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
+      <a class="project-external-link" href="https://github.com/cv63kittyhawk/business-diagnosis-tool" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
     </div>
+
+    <h2>Overview</h2>
+    <div class="modal-lead">
+      <p>
+        経営課題・UX課題・デザイン課題を一つの構造として捉え、診断できないかを探るために作成したプロトタイプ。
+      </p>
+    </div>
+    <p>
+      当初は「デザイン課題診断ゲーム」というアイデアから始まりましたが、検討を進める中で、多くのデザイン課題は経営課題やUX課題の表出であることに気づきました。
+    </p>
+    <p>そこで、</p>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Business</th>
+          <td>経営課題</td>
+        </tr>
+        <tr>
+          <th>UX</th>
+          <td>UX課題</td>
+        </tr>
+        <tr>
+          <th>UI / Design</th>
+          <td>UI / デザイン施策</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      という流れで課題を整理し、2択形式の質問から診断・スコア化・改善提案までを行う仕組みとして発展させました。
+    </p>
+    <p>
+      クライアント向けのセルフ診断だけでなく、営業やコンサルタントがヒアリング支援ツールとして利用する可能性も検討しています。
+    </p>
+
+    <h2>Concept</h2>
+
+    <h3>仮説</h3>
+    <ul>
+      <li>デザイン課題の多くは経営課題の末端表現なのではないか</li>
+      <li>UXは経営とデザインを接続する翻訳レイヤーなのではないか</li>
+      <li>シンプルな質問設計でも構造的な課題発見は可能なのではないか</li>
+      <li>診断結果にKPIや施策まで含めれば提案の起点になるのではないか</li>
+    </ul>
+
+    <h3>思想</h3>
+    <p>
+      このプロジェクトでは、デザインを「見た目を作る行為」ではなく、「課題を翻訳し、構造化する行為」として捉えています。
+    </p>
+    <p>AI時代において価値が残るのは、制作そのものだけではなく、</p>
+    <ul>
+      <li>問題設定</li>
+      <li>構造整理</li>
+      <li>意思決定支援</li>
+      <li>認識翻訳</li>
+    </ul>
+    <p>ではないかという問いも背景にあります。</p>
+
+    <h3>UX観点</h3>
+    <p>
+      実際にプロトタイプを試したところ、「価値は伝わっていますか？」のような抽象的な質問は回答に迷いが生まれることが分かりました。
+    </p>
+    <p>
+      一方で、「価格が高いと言われたことはありますか？」のような事実ベースの質問は回答しやすい。
+    </p>
+    <p>診断精度以前に、質問体験そのものがUXであることを再認識しました。</p>
+
+    <h3>AIとの役割分担</h3>
+    <p>AIは、以下を担当しました。</p>
+    <ul>
+      <li>構造展開</li>
+      <li>分岐設計</li>
+      <li>UIプロトタイプ生成</li>
+      <li>KPI整理</li>
+    </ul>
+    <p>人間側は、以下を担当しました。</p>
+    <ul>
+      <li>違和感の発見</li>
+      <li>質問品質の調整</li>
+      <li>実運用視点での判断</li>
+    </ul>
+    <p>特にUX上の違和感検知は、人間側の役割が大きかったです。</p>
+
+    <h3>構造設計</h3>
+    <p>課題を以下の5領域で整理しました。</p>
+    <table class="summary-table">
+      <tbody>
+        <tr>
+          <th>Traffic</th>
+          <td>流入や接点の課題</td>
+        </tr>
+        <tr>
+          <th>Value Proposition</th>
+          <td>価値訴求や選ばれる理由の課題</td>
+        </tr>
+        <tr>
+          <th>Clarity</th>
+          <td>情報理解や伝達の課題</td>
+        </tr>
+        <tr>
+          <th>Conversion</th>
+          <td>行動転換や問い合わせの課題</td>
+        </tr>
+        <tr>
+          <th>Retention</th>
+          <td>継続利用や関係維持の課題</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>それぞれをスコア化し、優先課題・KPI・改善施策へ接続する構造を試しました。</p>
+
+    <h2>Key Themes</h2>
+    <div class="skill-tags" aria-label="Business UX Diagnosis Tool key themes">
+      <span class="skill-tag">UX</span>
+      <span class="skill-tag">Structure Thinking</span>
+      <span class="skill-tag">Business Design</span>
+      <span class="skill-tag">AI Collaboration</span>
+      <span class="skill-tag">Human Decision Making</span>
+      <span class="skill-tag">Question Design</span>
+      <span class="skill-tag">Information Architecture</span>
+      <span class="skill-tag">Sales Enablement</span>
+      <span class="skill-tag">Design Strategy</span>
+    </div>
+
+    <h2>What I Learned</h2>
+
+    <h3>実装して見えた課題</h3>
+    <ul>
+      <li>診断ロジックより質問設計の方が難しい</li>
+      <li>スコア化すると課題の優先順位が見えやすくなる</li>
+      <li>UIより先に構造設計が必要だった</li>
+    </ul>
+
+    <h3>AI活用で分かったこと</h3>
+    <ul>
+      <li>AIは短時間で大量の仮説や構造を生成できる</li>
+      <li>UX違和感の発見は依然として人間が強い</li>
+      <li>AIは提案の量産が得意だが、評価と選択は人間側が担う必要がある</li>
+    </ul>
+
+    <h3>UX上の気づき</h3>
+    <ul>
+      <li>「考えさせる質問」は疲れる</li>
+      <li>「思い出せる質問」は答えやすい</li>
+      <li>回答履歴やスコア表示は安心感につながる</li>
+    </ul>
+
+    <h3>想定と現実のズレ</h3>
+    <p>
+      当初はデザイン診断ツールを想定していましたが、実際には営業支援や提案支援ツールとしての可能性が見えてきました。
+    </p>
+    <p>
+      また、ゲーム的な体験を想定していましたが、実際には構造化されたヒアリングツールに近い方向へ進化しました。
+    </p>
+
+    <h2>Future Ideas</h2>
+    <ul>
+      <li>営業モード実装</li>
+      <li>PDF提案レポート出力</li>
+      <li>質問UX改善</li>
+      <li>AIによる改善提案生成</li>
+      <li>CRM連携</li>
+      <li>仮見積もり生成</li>
+      <li>効果測定機能</li>
+      <li>業界別診断テンプレート</li>
+      <li>英語版展開</li>
+    </ul>
+
+    <h2>Related Thinking Themes</h2>
+    <div class="skill-tags" aria-label="Business UX Diagnosis related thinking themes">
+      <span class="skill-tag">Design as Translation</span>
+      <span class="skill-tag">Human-centered AI</span>
+      <span class="skill-tag">Structure Thinking</span>
+      <span class="skill-tag">AI Collaboration</span>
+      <span class="skill-tag">Decision Support Systems</span>
+      <span class="skill-tag">Enterprise Health Framework</span>
+      <span class="skill-tag">UX as Problem Translation</span>
+    </div>
+
+    <h2>Links</h2>
+    <div class="project-link-list">
+      <div class="project-link-group">
+        <h3>Live Prototype</h3>
+        <p>
+          JP:
+          <a class="project-external-link" href="https://cv63kittyhawk.github.io/business-diagnosis-tool/" target="_blank" rel="noopener noreferrer">
+            business-diagnosis-tool
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+        <p>
+          EN:
+          <a class="project-external-link" href="https://cv63kittyhawk.github.io/business-ux-design-diagnostic-en/" target="_blank" rel="noopener noreferrer">
+            business-ux-design-diagnostic-en
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="project-link-group">
+        <h3>GitHub</h3>
+        <p>
+          JP:
+          <a class="project-external-link" href="https://github.com/cv63kittyhawk/business-diagnosis-tool/settings/pages" target="_blank" rel="noopener noreferrer">
+            business-diagnosis-tool
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+        <p>
+          EN:
+          <a class="project-external-link" href="https://github.com/cv63kittyhawk/business-ux-design-diagnostic-en" target="_blank" rel="noopener noreferrer">
+            business-ux-design-diagnostic-en
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <h2>Core Insight</h2>
+    <blockquote>
+      デザイン課題の多くは、デザインの問題ではなく、経営・UX・認識翻訳の問題なのかもしれない。
+    </blockquote>
   </template>
 
   <section class="footer-image">
