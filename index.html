@@ -214,8 +214,42 @@
       transition: 0.2s ease;
     }
 
+    .card[hidden] {
+      display: none;
+    }
+
     .card:hover {
       transform: translateY(-4px);
+    }
+
+    body.reveal-ready .reveal-section .card {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out,
+        box-shadow 0.2s ease;
+    }
+
+    body.reveal-ready .reveal-section .card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body.reveal-ready .reveal-section .card.is-visible:hover {
+      transform: translateY(-4px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body.reveal-ready .reveal-section .card {
+        opacity: 1;
+        transform: none;
+        transition: box-shadow 0.2s ease;
+      }
+
+      body.reveal-ready .reveal-section .card:hover {
+        transform: none;
+      }
     }
 
     .card h4 {
@@ -252,11 +286,64 @@
       font-size: 13px;
       font-weight: 600;
       line-height: 1.3;
+      transition: color 0.22s ease-out;
     }
 
     .card-link:hover,
     .card-link:focus-visible {
-      color: #142a49;
+      color: #ff5ecb;
+    }
+
+    .link-arrow {
+      display: inline-block;
+      transition: transform 0.22s ease-out;
+    }
+
+    .card-link:hover .link-arrow,
+    .card-link:focus-visible .link-arrow {
+      transform: translateX(4px);
+    }
+
+    .inline-external-icon {
+      width: 13px;
+      height: 13px;
+      flex: 0 0 auto;
+      transition: transform 0.22s ease-out;
+    }
+
+    .card-link:hover .inline-external-icon,
+    .card-link:focus-visible .inline-external-icon {
+      transform: translate(2px, -2px);
+    }
+
+    .section-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .section-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 16px;
+      border: 1px dashed #b8c7d9;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: #315c96;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section-toggle:hover,
+    .section-toggle:focus-visible {
+      border-color: #8fa7c4;
+      background: #eef3f8;
+      color: #1F3A5F;
     }
 
     .card-status {
@@ -1310,7 +1397,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="reveal-section">
       <h3>Thinking Themes</h3>
 
       <div class="grid">
@@ -1347,10 +1434,103 @@
           <span class="card-status">Coming soon</span>
         </div>
 
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Design as Translation</h4>
+          <p>
+            デザインとは見た目を作ることではなく、
+            異なる立場や認識を翻訳する行為ではないか。
+            <br><br>
+            AI、エンジニア、経営者、ユーザー。
+            それぞれが見ている世界を接続する方法を探究している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Enterprise Health Framework</h4>
+          <p>
+            企業を単なる利益装置ではなく、
+            継続的に価値を生み出す生命体として捉える試み。
+            <br><br>
+            どこが健全で、どこに歪みがあり、
+            何が長期的な衰退を招くのかを考察する。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Human–AI Collaboration</h4>
+          <p>
+            AIは人間を置き換える存在なのか。
+            それとも人間の思考を拡張する存在なのか。
+            <br><br>
+            人とAIが協働するための役割分担と意思決定構造を探究している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Trust Building Systems</h4>
+          <p>
+            信頼はどのように形成されるのか。
+            <br><br>
+            肩書きや権威だけではなく、
+            実績、透明性、継続性などの要素から、
+            信頼構築の構造を観察している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Decision Architecture</h4>
+          <p>
+            人はどのように判断し、なぜ誤るのか。
+            <br><br>
+            個人、組織、社会の意思決定を、
+            構造と認知の視点から考察している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Community vs Organization</h4>
+          <p>
+            共同体と組織は似ているようで異なる。
+            <br><br>
+            効率性と帰属意識、成果と関係性。
+            両者の違いと接続点を探究している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="themes" hidden>
+          <h4>Practical Philosophy</h4>
+          <p>
+            思想は実務に翻訳できるのか。
+            <br><br>
+            歴史、哲学、組織論を、
+            日々の意思決定や仕事に接続する方法を考えている。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+      </div>
+
+      <div class="section-toggle-wrap">
+        <button
+          class="section-toggle"
+          type="button"
+          data-expand-toggle="themes"
+          data-closed-label="Explore More Themes (7) →"
+          data-open-label="Hide Additional Themes ↑"
+          aria-expanded="false"
+        >
+          Explore More Themes (7) →
+        </button>
       </div>
     </section>
 
-    <section>
+    <section class="reveal-section">
       <h3>Skills</h3>
 
       <div class="grid">
@@ -1467,7 +1647,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="reveal-section">
       <h3>Projects</h3>
 
       <div class="grid">
@@ -1511,10 +1691,112 @@
           </button>
         </div>
 
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Enterprise Health Diagnostic</h4>
+          <span class="card-meta">Strategy / Organization / AI</span>
+          <p>
+            企業の健全性を構造的に診断するための実験。
+            <br><br>
+            人の健康診断のように、
+            組織の状態を可視化できないかを検証している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Structural Fit Interview Agent</h4>
+          <span class="card-meta">UX / AI / Career</span>
+          <p>
+            企業と個人の相性を、
+            スキルではなく構造から分析する
+            インタビュー型AIエージェント。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Human Motivation Simulator</h4>
+          <span class="card-meta">UX / Psychology / AI</span>
+          <p>
+            四因子モデルを用いて、
+            人や組織がなぜ動くのかを可視化するプロトタイプ。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Thinking Themes Hub</h4>
+          <span class="card-meta">Information Architecture / UX</span>
+          <p>
+            思想や探究テーマを整理し、
+            相互の関係性を可視化する知識マップ実験。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>AI Translation Workshop</h4>
+          <span class="card-meta">AI / Design / Communication</span>
+          <p>
+            AI実装よりも難しかった
+            「認識翻訳」を整理するプロジェクト。
+            <br><br>
+            異なる専門家同士の対話を支援する方法を探る。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Relationship Density Framework</h4>
+          <span class="card-meta">Organization / Human Systems</span>
+          <p>
+            関係を維持するために必要な一致密度と、
+            不足を補う仕組みを研究するプロジェクト。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>UX of Parenting</h4>
+          <span class="card-meta">UX / Human Behavior</span>
+          <p>
+            育児を人間中心設計として観察する実験。
+            <br><br>
+            行動変容、学習、モチベーションを
+            家庭という環境で観測している。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+        <div class="card" data-collapsible-item="projects" hidden>
+          <h4>Structure Observation Library</h4>
+          <span class="card-meta">Research / Systems Thinking</span>
+          <p>
+            企業、社会、AI、歴史の構造観測ログ。
+            <br><br>
+            個別事例ではなく、
+            再利用可能なパターンを蓄積する試み。
+          </p>
+          <span class="card-status">Coming soon</span>
+        </div>
+
+      </div>
+
+      <div class="section-toggle-wrap">
+        <button
+          class="section-toggle"
+          type="button"
+          data-expand-toggle="projects"
+          data-closed-label="Explore More Projects (8) →"
+          data-open-label="Hide Additional Projects ↑"
+          aria-expanded="false"
+        >
+          Explore More Projects (8) →
+        </button>
       </div>
     </section>
 
-    <section>
+    <section class="reveal-section">
       <h3>Outcomes &amp; Connections</h3>
 
       <div class="grid">
@@ -1526,13 +1808,20 @@
             </svg>
             <span class="outcome-category">Speaking</span>
           </div>
-          <h4>Internal Engineering Event Presentation</h4>
+          <h4>GREE Engineers’ Bash 2025</h4>
           <p>
-            グループ内エンジニアイベントに登壇し、
-            デザインやクリエイティブ実務の視点から、
-            制作現場における課題やワークフローについて共有。
+            グリーグループ横断のエンジニアイベント「GREE Engineers’ Bash 2025」にて、初めて設けられたアート枠で登壇。
+            広告やクリエイティブ制作における視点や問いを共有し、イベントロゴ制作も担当。
+            <br><br>
+            異なる専門領域同士をつなぐ
+            「認識翻訳」の実践経験となった。
           </p>
-          <span class="card-status">Details coming soon</span>
+          <a class="card-link" href="https://hd.gree.net/jp/ja/6degrees/2025/06/01.html" target="_blank" rel="noopener noreferrer">
+            Event Interview
+            <svg class="inline-external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+            </svg>
+          </a>
         </div>
 
         <div class="card outcome-card">
@@ -3059,6 +3348,35 @@
     let lastFocusedElement = null;
     let lastScrollY = 0;
     let modalHideTimer = null;
+    let cardRevealObserver = null;
+
+    function revealCard(card) {
+      card.classList.add('is-visible');
+      if (cardRevealObserver) {
+        cardRevealObserver.unobserve(card);
+      }
+    }
+
+    document.body.classList.add('reveal-ready');
+
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cardRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealCard(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      document.querySelectorAll('.reveal-section .card').forEach((card) => {
+        cardRevealObserver.observe(card);
+      });
+    } else {
+      document.querySelectorAll('.reveal-section .card').forEach(revealCard);
+    }
 
     function openModal(modalId, trigger) {
       const template = document.getElementById(`modal-${modalId}`);
@@ -3098,6 +3416,46 @@
 
     document.querySelectorAll('[data-modal-id]').forEach((button) => {
       button.addEventListener('click', () => openModal(button.dataset.modalId, button));
+    });
+
+    document.querySelectorAll('.card-link').forEach((link) => {
+      link.childNodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('→')) {
+          const parts = node.textContent.split('→');
+          const fragment = document.createDocumentFragment();
+          fragment.append(document.createTextNode(parts[0]));
+
+          const arrow = document.createElement('span');
+          arrow.className = 'link-arrow';
+          arrow.textContent = '→';
+          fragment.append(arrow);
+          fragment.append(document.createTextNode(parts.slice(1).join('→')));
+          node.replaceWith(fragment);
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-expand-toggle]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.expandToggle;
+        const items = document.querySelectorAll(`[data-collapsible-item="${target}"]`);
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        items.forEach((item) => {
+          item.hidden = isExpanded;
+          if (!isExpanded) {
+            item.classList.remove('is-visible');
+            if (cardRevealObserver) {
+              cardRevealObserver.observe(item);
+            } else {
+              revealCard(item);
+            }
+          }
+        });
+
+        button.setAttribute('aria-expanded', String(!isExpanded));
+        button.textContent = isExpanded ? button.dataset.closedLabel : button.dataset.openLabel;
+      });
     });
 
     closeModalButton.addEventListener('click', closeModal);
