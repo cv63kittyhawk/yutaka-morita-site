@@ -699,13 +699,22 @@
       color: #1c2633;
     }
 
-    .modal-article h1 {
-      margin-bottom: 24px;
+    .modal-article h1,
+    .modal-title {
+      margin-bottom: 10px;
       color: #152237;
       font-family: 'Playfair Display', serif;
       font-size: 44px;
       line-height: 1.08;
       letter-spacing: 0;
+    }
+
+    .modal-subtitle {
+      margin: 0 0 28px;
+      color: #6f7f94;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.7;
     }
 
     .modal-article h2 {
@@ -787,7 +796,22 @@
     }
 
     .framework-section h3 {
-      margin-top: 22px;
+      display: block;
+      margin: 30px 0 10px;
+      color: #24466f;
+      font-size: 18px;
+      line-height: 1.45;
+      text-align: left;
+      text-transform: none;
+    }
+
+    .framework-section h3::before,
+    .framework-section h3::after {
+      content: none;
+    }
+
+    .framework-section h3:first-child {
+      margin-top: 0;
     }
 
     .framework-section blockquote {
@@ -800,12 +824,6 @@
       border: 1px solid #dce4ee;
       border-radius: 16px;
       background: #f8fafc;
-    }
-
-    .framework-panel h3::before,
-    .framework-panel h3::after {
-      border-top: 1px dashed #c9d5e3;
-      background: transparent;
     }
 
     .framework-image {
@@ -1206,8 +1224,14 @@
         padding: 30px 20px 52px;
       }
 
-      .modal-article h1 {
+      .modal-article h1,
+      .modal-title {
         font-size: 32px;
+      }
+
+      .modal-subtitle {
+        margin-bottom: 24px;
+        font-size: 14px;
       }
 
       .modal-article h2 {
@@ -1877,7 +1901,8 @@
   </div>
 
   <template id="modal-eight-layer" data-kicker="Framework">
-    <h1 id="modal-title">The 8-Layer Framework</h1>
+    <h1 id="modal-title" class="modal-title">The 8-Layer Framework</h1>
+    <p class="modal-subtitle">企業を8層で見るフレームワーク</p>
     <div class="framework-meta">
       <span>Framework</span>
       <span>Organization Design</span>
@@ -1886,7 +1911,7 @@
     </div>
 
     <section class="framework-section">
-      <h2>企業を8層で見るフレームワーク</h2>
+      <h2>Overview</h2>
       <div class="modal-lead">
         <p>
           企業・個人・相性を、表面的な情報ではなく「構造」から理解するためのフレームワーク。
@@ -1898,7 +1923,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>概要</h2>
+      <h2>Key Concepts</h2>
+      <h3>Origin and Scope</h3>
       <p>このフレームワークは、「企業をもっと構造的に理解できないか」という違和感から始まりました。</p>
       <p>一般的な企業研究では、</p>
       <ul>
@@ -1930,7 +1956,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>8つのレイヤー</h2>
+      <h3>The 8 Layers</h3>
       <table class="summary-table">
         <tbody>
           <tr>
@@ -1976,7 +2002,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>3つの構造ドメイン</h2>
+      <h3>Three Structural Domains</h3>
       <p>8つのレイヤーは、さらに3つの大きな領域に整理できます。</p>
 
       <img class="framework-image framework-image--narrow" src="assets/3layer-structure-ja-v1.png" alt="Three structural domains diagram in Japanese">
@@ -2009,7 +2035,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>構造相性分析</h2>
+      <h2>Practical Translation</h2>
+      <h3>Structural Compatibility</h3>
       <p>相性は、単なる「雰囲気」ではなく、</p>
       <ul>
         <li>何を重視しているか</li>
@@ -2047,7 +2074,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>実務への接続</h2>
+      <h3>Key Learnings</h3>
 
       <h3>UX / サービス設計</h3>
       <ul>
@@ -2086,7 +2113,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>プロンプト化と今後のプロトタイプ</h2>
+      <h2>Related Experiments</h2>
+      <h3>Prompt Prototypes</h3>
       <p>このフレームワークは、まずAIプロンプトとして検証しました。</p>
 
       <h3>現在作成・検証したもの</h3>
@@ -2112,7 +2140,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Related Links / 関連リンク</h2>
+      <h3>Related Links</h3>
       <p>このフレームワークに関連する記事・実装・投稿をここにまとめます。</p>
       <p>リンクは順次追加予定です。</p>
 
@@ -2152,7 +2180,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>最後に</h2>
+      <h2>Future Development</h2>
       <p>このフレームワークは、単なる診断ツールではなく、「構造を理解するための視点」として作っています。</p>
       <p>企業・個人・AI・組織を、同じ構造の上で見られるようにすると、表面的な違和感や摩擦が、かなり説明しやすくなります。</p>
 
@@ -2166,7 +2194,8 @@
   </template>
 
   <template id="modal-motivation" data-kicker="Framework">
-    <h1 id="modal-title">Four Elements of Human Motivation</h1>
+    <h1 id="modal-title" class="modal-title">Four Elements of Human Motivation</h1>
+    <p class="modal-subtitle">四因子モデル</p>
     <div class="framework-meta">
       <span>Four-Factor Model</span>
       <span>Human Motivation</span>
@@ -2175,7 +2204,7 @@
     </div>
 
     <section class="framework-section">
-      <h2>四因子モデル</h2>
+      <h2>Overview</h2>
       <div class="modal-lead">
         <p>
           人・組織・社会が「なぜ動くのか」「なぜ動かないのか」を構造的に捉えるためのフレームワーク。
@@ -2184,7 +2213,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>Overview</h2>
+      <h2>Key Concepts</h2>
+      <h3>Origin and Scope</h3>
       <p>このプロジェクトは、「人はなぜ動くのか？」という問いから始まりました。</p>
       <p>
         仕事、組織、採用、UX、歴史を観察していると、能力が高い人が動けなかったり、逆に十分な準備がない人が大きな成果を出したりする場面があります。
@@ -2205,7 +2235,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Initial Question</h2>
+      <h3>Initial Questions</h3>
       <p>最初にあった問いや違和感。</p>
       <ul>
         <li>なぜ良い提案が通らないのか</li>
@@ -2218,7 +2248,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Core Hypothesis</h2>
+      <h3>Core Hypothesis</h3>
       <p>このプロジェクトで検証している仮説。</p>
       <ul>
         <li>行動は「やる気」だけで決まらない</li>
@@ -2230,7 +2260,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Structure</h2>
+      <h3>Four-Factor Structure</h3>
       <div class="framework-panel">
         <h3>基本式</h3>
         <p>行動発生 ＝ 環境 × 意志 × 能力 − 抑止力</p>
@@ -2280,7 +2310,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>Visual Frameworks</h2>
+      <h2>Related Experiments</h2>
+      <h3>Visual Frameworks</h3>
       <h3>作成済み</h3>
       <ul>
         <li>four-factor-model-en-v1.png</li>
@@ -2294,7 +2325,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Experiments</h2>
+      <h3>Experiments</h3>
       <h3>概念検証</h3>
       <ul>
         <li>歴史事例への適用</li>
@@ -2320,7 +2351,8 @@
     </section>
 
     <section class="framework-section">
-      <h2>What Worked</h2>
+      <h2>Practical Translation</h2>
+      <h3>What Worked</h3>
       <h3>分野横断性</h3>
       <p>同じモデルが以下の領域で使える可能性が見えました。</p>
       <ul>
@@ -2340,7 +2372,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Key Learnings</h2>
+      <h3>Practical Applications</h3>
       <ul>
         <li>人は正しいから動くわけではない</li>
         <li>多くの問題は個人より構造にある</li>
@@ -2351,7 +2383,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Practical Applications</h2>
+      <h3>Practical Applications</h3>
       <table class="summary-table">
         <tbody>
           <tr>
@@ -2379,7 +2411,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Current Status</h2>
+      <h3>Current Status</h3>
       <h3>完成済み</h3>
       <ul>
         <li>四因子モデル定義</li>
@@ -2407,7 +2439,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Future Directions</h2>
+      <h2>Future Development</h2>
       <ul>
         <li>実際の組織事例への適用</li>
         <li>診断チェックリスト化</li>
@@ -2418,7 +2450,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Related Links</h2>
+      <h3>Related Links</h3>
       <p>公開済みの記事と、今後追加予定の関連リンクです。</p>
       <div class="framework-link-grid">
         <a class="framework-link-card" href="https://note.com/yutaka_morita_d/n/n888a151182b9?sub_rt=share_pw" target="_blank" rel="noopener noreferrer">
@@ -2445,7 +2477,7 @@
     </section>
 
     <section class="framework-section">
-      <h2>Closing</h2>
+      <h3>Closing</h3>
       <p>このプロジェクトは、「なぜ動くのか」という単純な問いから始まりました。</p>
       <p>
         しかし整理を進めるうちに、それは個人の問題ではなく、組織や社会、歴史にも共通する構造かもしれないと感じるようになりました。
@@ -2464,14 +2496,16 @@
   </template>
 
   <template id="modal-data-analytics" data-kicker="Skill">
-    <h1 id="modal-title">Data Analytics</h1>
+    <h1 id="modal-title" class="modal-title">Data Analytics</h1>
+    <p class="modal-subtitle">構造化とデータ観測</p>
+    <h2>Overview</h2>
     <div class="modal-lead">
       <p>
         構造化・観測・分析を通じて、複雑な情報を整理するための探索。
       </p>
     </div>
 
-    <h2>What I Explore</h2>
+    <h2>Capabilities</h2>
     <ul>
       <li>構造化</li>
       <li>情報整理</li>
@@ -2513,14 +2547,16 @@
   </template>
 
   <template id="modal-ai-collaboration" data-kicker="Skill">
-    <h1 id="modal-title">AI Collaboration</h1>
+    <h1 id="modal-title" class="modal-title">AI Collaboration</h1>
+    <p class="modal-subtitle">AIとの協働実験</p>
+    <h2>Overview</h2>
     <div class="modal-lead">
       <p>
         AIを単なる自動化ではなく、思考拡張や高速試作パートナーとして活用。
       </p>
     </div>
 
-    <h2>What I Explore</h2>
+    <h2>Capabilities</h2>
     <ul>
       <li>Prompt Design</li>
       <li>AI-assisted Prototyping</li>
@@ -2565,14 +2601,16 @@
   </template>
 
   <template id="modal-ux-structure" data-kicker="Skill">
-    <h1 id="modal-title">UX / Structure Thinking</h1>
+    <h1 id="modal-title" class="modal-title">UX / Structure Thinking</h1>
+    <p class="modal-subtitle">UXと構造思考</p>
+    <h2>Overview</h2>
     <div class="modal-lead">
       <p>
         人間・組織・情報構造を、接続や意思決定の視点から観測。
       </p>
     </div>
 
-    <h2>What I Explore</h2>
+    <h2>Capabilities</h2>
     <ul>
       <li>Information Architecture</li>
       <li>Human-centered Design</li>
@@ -2619,7 +2657,8 @@
   </template>
 
   <template id="modal-elena" data-kicker="Project">
-    <h1 id="modal-title">Elena — Human Insight Interface</h1>
+    <h1 id="modal-title" class="modal-title">Elena — Human Insight Interface</h1>
+    <p class="modal-subtitle">人間の洞察を支えるAIチャットUI実験</p>
 
     <div class="project-meta-links" aria-label="Elena project links">
       <a class="project-external-link" href="https://cv63kittyhawk.github.io/ux-agent-elena/" target="_blank" rel="noopener noreferrer">
@@ -2664,7 +2703,7 @@
     <p>この仮説から、Character-based AI Interaction を試作しました。</p>
     <p>単一HTML + GitHub Pagesのみで軽量に構築しています。</p>
 
-    <h2>Concept</h2>
+    <h2>Motivation</h2>
 
     <h3>Human-centered AI</h3>
     <p>AIを「効率化ツール」としてではなく、</p>
@@ -2692,7 +2731,12 @@
     </blockquote>
     <p>今回強く感じたのは、この方向でAIの価値が大きいことでした。</p>
 
-    <h2>Screenshot Gallery</h2>
+    <h2>Hypothesis</h2>
+    <p>
+      キャラクター性や存在感を持つAI UIは、単なるチャット画面よりも話しかけやすさや感情の出しやすさを生むのではないか。
+    </p>
+
+    <h2>What I Built</h2>
     <div class="project-gallery">
       <figure>
         <img src="assets/img_elena_screenshot.png" alt="Elena main UI screenshot">
@@ -2708,7 +2752,7 @@
       </figure>
     </div>
 
-    <h2>Key Themes</h2>
+    <h3>Key Themes</h3>
     <div class="skill-tags" aria-label="Elena key themes">
       <span class="skill-tag">UX</span>
       <span class="skill-tag">Human-centered AI</span>
@@ -2737,7 +2781,7 @@
     <h3>Lightweight prototypes move faster</h3>
     <p>Single HTML + GitHub Pages だけでも、かなり多くの仮説検証ができました。</p>
 
-    <h2>Future Ideas</h2>
+    <h2>Future Direction</h2>
     <ul>
       <li>OpenAI API integration</li>
       <li>Emotion-aware interaction</li>
@@ -2748,7 +2792,7 @@
       <li>AI-assisted UX research mode</li>
     </ul>
 
-    <h2>Links</h2>
+    <h3>Links</h3>
     <div class="project-link-list">
       <div class="project-link-group">
         <h3>Live Prototype</h3>
@@ -2797,7 +2841,8 @@
   </template>
 
   <template id="modal-networking-hub" data-kicker="Project">
-    <h1 id="modal-title">AI-Assisted Networking Hub &amp; Card Experiment</h1>
+    <h1 id="modal-title" class="modal-title">AI-Assisted Networking Hub &amp; Card Experiment</h1>
+    <p class="modal-subtitle">AI支援によるネットワーキングHubと名刺実験</p>
 
     <div class="project-meta-links" aria-label="Networking Hub project links">
       <a class="project-external-link" href="https://github.com/cv63kittyhawk/yutaka-morita-site/tree/main" target="_blank" rel="noopener noreferrer">
@@ -2834,7 +2879,7 @@
       制作を進める中で、このプロジェクトは単なる自己紹介サイトではなく、「個人を題材にしたHuman-Centered Brandingの実験」へと発展していきました。
     </p>
 
-    <h2>Concept</h2>
+    <h2>Motivation</h2>
 
     <h3>仮説</h3>
     <p>
@@ -2932,7 +2977,7 @@
       将来的には、「企業ブランディング戦略を個人スケールで実践・観測するケーススタディ」として発展させることも視野に入れています。
     </p>
 
-    <h2>Key Themes</h2>
+    <h2>Hypothesis</h2>
     <div class="skill-tags" aria-label="Networking Hub key themes">
       <span class="skill-tag">Human-Centered Branding</span>
       <span class="skill-tag">UX</span>
@@ -2947,7 +2992,7 @@
       <span class="skill-tag">Communication Design</span>
     </div>
 
-    <h2>Concept Visuals</h2>
+    <h2>What I Built</h2>
 
     <h3>Site Concept</h3>
     <div class="project-gallery">
@@ -3028,7 +3073,7 @@
     </ul>
     <p>などのテーマが次々と接続され、結果的に長期的な実験環境へと変化していきました。</p>
 
-    <h2>Future Ideas</h2>
+    <h2>Future Direction</h2>
     <ul>
       <li>Thinking Themesの体系化</li>
       <li>AI支援型ナビゲーション</li>
@@ -3040,7 +3085,7 @@
       <li>個人実験から企業ブランディングへの応用</li>
     </ul>
 
-    <h2>Links</h2>
+    <h3>Links</h3>
     <div class="project-link-list">
       <div class="project-link-group">
         <h3>Live Demo</h3>
@@ -3066,7 +3111,7 @@
       </div>
     </div>
 
-    <h2>Related Thinking Themes</h2>
+    <h3>Related Thinking Themes</h3>
     <div class="skill-tags" aria-label="Networking Hub related thinking themes">
       <span class="skill-tag">Human-Centered AI</span>
       <span class="skill-tag">Quiet Branding</span>
@@ -3078,14 +3123,15 @@
       <span class="skill-tag">Value Persistence Chain</span>
     </div>
 
-    <h2>Core Insight</h2>
+    <h3>Core Insight</h3>
     <blockquote>
       ブランディングとは自分を大きく見せることではなく、相手が自分を理解しやすくなるように文脈を設計することなのかもしれない。
     </blockquote>
   </template>
 
   <template id="modal-business-diagnosis" data-kicker="Project">
-    <h1 id="modal-title">Business UX Diagnosis Tool</h1>
+    <h1 id="modal-title" class="modal-title">Business UX Diagnosis Tool</h1>
+    <p class="modal-subtitle">経営課題とUX課題を接続する診断プロトタイプ</p>
 
     <div class="project-meta-links" aria-label="Business UX Diagnosis Tool project links">
       <a class="project-external-link" href="https://cv63kittyhawk.github.io/business-diagnosis-tool/" target="_blank" rel="noopener noreferrer">
@@ -3135,7 +3181,7 @@
       クライアント向けのセルフ診断だけでなく、営業やコンサルタントがヒアリング支援ツールとして利用する可能性も検討しています。
     </p>
 
-    <h2>Concept</h2>
+    <h2>Motivation</h2>
 
     <h3>仮説</h3>
     <ul>
@@ -3211,7 +3257,7 @@
     </table>
     <p>それぞれをスコア化し、優先課題・KPI・改善施策へ接続する構造を試しました。</p>
 
-    <h2>Key Themes</h2>
+    <h2>Hypothesis</h2>
     <div class="skill-tags" aria-label="Business UX Diagnosis Tool key themes">
       <span class="skill-tag">UX</span>
       <span class="skill-tag">Structure Thinking</span>
@@ -3223,6 +3269,14 @@
       <span class="skill-tag">Sales Enablement</span>
       <span class="skill-tag">Design Strategy</span>
     </div>
+
+    <h2>What I Built</h2>
+    <p>
+      2択形式の質問から、経営課題・UX課題・デザイン課題を整理し、スコア化と改善提案につなげる診断プロトタイプを制作しました。
+    </p>
+    <p>
+      Traffic、Value Proposition、Clarity、Conversion、Retention の5領域をもとに、優先課題やKPIを見える形にすることを試しています。
+    </p>
 
     <h2>What I Learned</h2>
 
@@ -3255,7 +3309,7 @@
       また、ゲーム的な体験を想定していましたが、実際には構造化されたヒアリングツールに近い方向へ進化しました。
     </p>
 
-    <h2>Future Ideas</h2>
+    <h2>Future Direction</h2>
     <ul>
       <li>営業モード実装</li>
       <li>PDF提案レポート出力</li>
@@ -3268,7 +3322,7 @@
       <li>英語版展開</li>
     </ul>
 
-    <h2>Related Thinking Themes</h2>
+    <h3>Related Thinking Themes</h3>
     <div class="skill-tags" aria-label="Business UX Diagnosis related thinking themes">
       <span class="skill-tag">Design as Translation</span>
       <span class="skill-tag">Human-centered AI</span>
@@ -3279,7 +3333,7 @@
       <span class="skill-tag">UX as Problem Translation</span>
     </div>
 
-    <h2>Links</h2>
+    <h3>Links</h3>
     <div class="project-link-list">
       <div class="project-link-group">
         <h3>Live Prototype</h3>
@@ -3326,7 +3380,7 @@
       </div>
     </div>
 
-    <h2>Core Insight</h2>
+    <h3>Core Insight</h3>
     <blockquote>
       デザイン課題の多くは、デザインの問題ではなく、経営・UX・認識翻訳の問題なのかもしれない。
     </blockquote>
