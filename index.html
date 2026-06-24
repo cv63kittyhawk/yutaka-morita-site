@@ -992,6 +992,12 @@
       background: #f1f5fa;
     }
 
+    .modal-lead + p,
+    .modal-lead + ul,
+    .modal-lead + table {
+      margin-top: 32px;
+    }
+
     .modal-divider {
       height: 1px;
       margin: 34px 0;
@@ -1113,11 +1119,18 @@
     .project-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      align-items: start;
       gap: 16px;
       margin: 22px 0 34px;
     }
 
+    .project-gallery--large {
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      gap: 20px;
+    }
+
     .project-gallery figure {
+      align-self: start;
       margin: 0;
       border: 1px solid #dce4ee;
       border-radius: 16px;
@@ -1185,7 +1198,7 @@
 
     .project-simple-label {
       color: #6b7b91;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       line-height: 1.35;
       letter-spacing: 0;
@@ -1200,9 +1213,12 @@
     .project-simple-link {
       display: inline-flex;
       align-items: center;
+      justify-self: start;
       gap: 6px;
+      width: fit-content;
+      max-width: 100%;
       color: #1F3A5F;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       line-height: 1.45;
       overflow-wrap: anywhere;
@@ -2886,7 +2902,27 @@
     </p>
 
     <h2>What I Built</h2>
-    <div class="project-gallery">
+
+    <p>
+      最初に作ったのはキャラクター画像でした。
+    </p>
+    <p>
+      AIの回答にキャラクター画像を添えることで、単なるテキスト応答よりも親近感が生まれるのではないかと考えました。
+    </p>
+
+    <h3>キャラクターからUIへ</h3>
+    <p>
+      ただ、プロンプトへの返答ごとに毎回画像生成するのは効率が悪く、体験としても重くなりそうでした。
+    </p>
+    <p>
+      そこで、チャットUIそのものにキャラクター画像を組み込み、会話相手としての存在感を持たせる方向へ切り替えました。
+    </p>
+
+    <div class="project-gallery project-gallery--large">
+      <figure>
+        <img src="assets/img_elena_scifi.png" alt="Elena character visual">
+        <figcaption>Character</figcaption>
+      </figure>
       <figure>
         <img src="assets/img_elena_screenshot.png" alt="Elena main UI screenshot">
         <figcaption>Main UI</figcaption>
@@ -2895,11 +2931,12 @@
         <img src="assets/img_elena_screenshot_chat.png" alt="Elena conversation UI screenshot">
         <figcaption>Conversation UI</figcaption>
       </figure>
-      <figure>
-        <img src="assets/img_elena_scifi.png" alt="Elena character visual">
-        <figcaption>Character</figcaption>
-      </figure>
     </div>
+
+    <h3>プロトタイプ化</h3>
+    <p>
+      その後、AIにHTMLの初期構造を出力してもらい、チャット内のアイコン表示やCSSの調整を重ねてプロトタイプとして形にしました。
+    </p>
 
     <h3>主要テーマ</h3>
     <div class="skill-tags" aria-label="Elena key themes">
@@ -3140,15 +3177,32 @@
 
     <h2>What I Built</h2>
 
-    <h3>サイトコンセプト</h3>
+    <p>
+      このプロジェクトでは、Hubサイトと名刺を並行して制作しました。
+    </p>
+    <p>
+      どちらもAIでビジュアルの方向性を探索し、人間側で情報設計と最終判断を行っています。
+    </p>
+
+    <h3>サイト制作</h3>
+    <p>
+      過去の対話ログをもとに、まずビジュアルコンセプトを生成。その後、HTMLプロトタイプへ展開し、実際の内容を入れながら構成を調整しました。
+    </p>
     <div class="project-gallery">
       <figure>
         <img src="assets/image_site_concept.png" alt="Initial site visual concept">
         <figcaption>サイトコンセプト</figcaption>
       </figure>
+      <figure>
+        <img src="assets/image_site_html_v0.png" alt="Initial HTML page generated from the site concept">
+        <figcaption>初期HTMLページ</figcaption>
+      </figure>
     </div>
 
-    <h3>名刺コンセプト</h3>
+    <h3>名刺制作</h3>
+    <p>
+      Hubサイトの世界観を、オフラインの接点へ拡張するために制作。複数案を比較し、最終的には印刷解像度を考慮して、背景・パーツ・テキストを分けて仕上げました。
+    </p>
     <div class="project-gallery">
       <figure>
         <img src="assets/img_card_conceptv1_front.png" alt="Business card concept version 1 front">
@@ -3162,10 +3216,6 @@
         <img src="assets/img_card_concept_back.png" alt="Business card concept back">
         <figcaption>名刺コンセプト 裏面</figcaption>
       </figure>
-    </div>
-
-    <h3>完成した名刺印刷版</h3>
-    <div class="project-gallery">
       <figure>
         <img src="assets/img_card_front.png" alt="Printed business card front">
         <figcaption>完成した名刺印刷版 表</figcaption>
