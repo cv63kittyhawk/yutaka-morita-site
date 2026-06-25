@@ -360,12 +360,7 @@
       line-height: 1.3;
     }
 
-    .skill-card {
-      gap: 18px;
-    }
-
     .skill-summary {
-      margin-bottom: 0;
       color: #555;
       font-size: 15px;
       line-height: 1.75;
@@ -433,11 +428,31 @@
       line-height: 1.3;
     }
 
+    .skill-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
     .card .skill-title {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 0;
+    }
+
+    .card .skill-card-subtitle {
+      display: inline-flex;
+      width: fit-content;
+      margin: 0 0 8px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #eef3f8;
+      color: #6b7b91;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
     }
 
     .skill-icon {
@@ -1684,18 +1699,19 @@
       <div class="grid">
 
         <div class="card skill-card">
-          <h4 class="skill-title">
+          <p class="skill-card-subtitle">構造化とデータ観測</p>
+          <div class="skill-heading">
             <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5h16M6.5 17V10m5.5 7V5m5.5 12v-4"/>
             </svg>
-            Data Analytics
-          </h4>
+            <h4 class="skill-title">Data Analytics</h4>
+          </div>
           <p class="skill-summary">
             構造化・観測・分析を通じて、
             複雑な情報を整理するための探索。
             <br><br>
             単なる数値分析ではなく、
-            「人・組織・行動」の構造を比較可能な形へ整理することに関心があります。
+            人・組織・行動を比較可能な構造として捉えることに関心があります。
           </p>
           <button class="card-link" type="button" data-modal-id="data-analytics">
             Explore Skill →
@@ -1703,18 +1719,19 @@
         </div>
 
         <div class="card skill-card">
-          <h4 class="skill-title">
+          <p class="skill-card-subtitle">AIとの協働実験</p>
+          <div class="skill-heading">
             <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m-5.5.5 2 2m7-2-2 2M5 13h14v6H5v-6Zm-2 2v2m18-2v2M9 16h.01M15 16h.01"/>
             </svg>
-            AI Collaboration
-          </h4>
+            <h4 class="skill-title">AI Collaboration</h4>
+          </div>
           <p class="skill-summary">
-            AIを単なる自動化ではなく、
-            思考拡張や高速試作パートナーとして活用。
+            AIを単なる自動化ツールではなく、
+            思考拡張や高速試作のパートナーとして活用。
             <br><br>
-            プロトタイピング、文章整理、構造化を通じて、
-            人間とAIの協働ワークフローを実験しています。
+            プロトタイピングや構造化を通じて、
+            人間とAIの協働ワークフローを探究しています。
           </p>
           <button class="card-link" type="button" data-modal-id="ai-collaboration">
             Explore Skill →
@@ -1722,18 +1739,19 @@
         </div>
 
         <div class="card skill-card">
-          <h4 class="skill-title">
+          <p class="skill-card-subtitle">UXと構造思考</p>
+          <div class="skill-heading">
             <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 7.2 12 11.5l7.5-4.3L12 3Zm-7.5 8.5L12 16l7.5-4.5M4.5 15.8 12 20l7.5-4.2"/>
             </svg>
-            UX / Structure Thinking
-          </h4>
+            <h4 class="skill-title">UX / Structure Thinking</h4>
+          </div>
           <p class="skill-summary">
             人間・組織・情報構造を、
             接続や意思決定の視点から観測。
             <br><br>
             UIだけでなく、
-            人がどう理解し、迷い、判断するかまで含めて設計対象として捉えています。
+            人がどのように理解し、判断し、協働するかまで含めて設計対象として捉えています。
           </p>
           <button class="card-link" type="button" data-modal-id="ux-structure">
             Explore Skill →
@@ -2669,45 +2687,54 @@
         構造化・観測・分析を通じて、複雑な情報を整理するための探索。
       </p>
     </div>
+    <p>
+      単なる数値分析ではなく、人・組織・行動の関係性を比較可能な形へ整理することに関心があります。
+    </p>
 
     <h2>Capabilities</h2>
     <ul>
-      <li>構造化</li>
-      <li>情報整理</li>
+      <li>Information Structuring</li>
+      <li>Data Analysis</li>
+      <li>Observation</li>
       <li>SQL</li>
-      <li>データ観測</li>
+      <li>BigQuery</li>
+      <li>Critical Thinking</li>
     </ul>
 
     <h2>Evidence</h2>
     <ul>
-      <li>Kaggle dataset exploration</li>
-      <li>BigQuery query practice</li>
-      <li>Structure analysis experiments</li>
-      <li>Data-oriented observation and documentation</li>
-    </ul>
-
-    <h2>Certificates</h2>
-    <ul>
-      <li>Google Data Analytics Professional Certificate <span class="certificate-status">In progress</span></li>
+      <li>広告配信レポート分析</li>
+      <li>クリエイティブ比較検証</li>
+      <li>情報整理と構造化</li>
+      <li>データ観測と記録</li>
     </ul>
 
     <h2>Experiments</h2>
     <ul>
-      <li>Kaggle</li>
-      <li>BigQuery</li>
-      <li>構造分析</li>
+      <li>Kaggle Dataset Exploration</li>
+      <li>BigQuery Query Practice</li>
+      <li>企業構造分析</li>
+      <li>人間行動の構造化実験</li>
+    </ul>
+
+    <h2>Related Projects</h2>
+    <ul>
+      <li>Business UX Diagnosis</li>
+      <li>The 8-Layer Framework</li>
+      <li>Four Elements of Human Motivation</li>
     </ul>
 
     <h2>Learning</h2>
     <ul>
-      <li>Google Data Analytics</li>
-      <li>SQL and query thinking</li>
-      <li>How to turn messy observations into comparable structures</li>
+      <li>Google Data Analytics Professional Certificate <span class="certificate-status">In progress</span></li>
+      <li>SQL and Query Thinking</li>
+      <li>BigQuery</li>
+      <li>Data Visualization Fundamentals</li>
     </ul>
 
     <h2>Future Direction</h2>
     <p>
-      企業・組織・個人の情報を、比較可能な構造として整理する分析フレームへ発展させていきたい。
+      企業・組織・個人に関する情報を、比較可能な構造として整理し、意思決定や課題発見を支援する分析フレームへ発展させていきたい。
     </p>
   </template>
 
@@ -2717,51 +2744,64 @@
     <h2>Overview</h2>
     <div class="modal-lead">
       <p>
-        AIを単なる自動化ではなく、思考拡張や高速試作パートナーとして活用。
+        AIを単なる自動化ツールではなく、思考拡張や高速試作のパートナーとして活用。
       </p>
     </div>
+    <p>
+      制作・リサーチ・構造化・意思決定支援を通じて、人間とAIの協働ワークフローを実験しています。
+    </p>
 
     <h2>Capabilities</h2>
     <ul>
       <li>Prompt Design</li>
-      <li>AI-assisted Prototyping</li>
+      <li>AI Collaboration</li>
       <li>Human-AI Workflow Design</li>
+      <li>AI-assisted Prototyping</li>
       <li>AI-supported Research</li>
-      <li>Rapid Concept Visualization</li>
+      <li>Rapid Iteration</li>
     </ul>
 
     <h2>Evidence</h2>
     <ul>
       <li>Elena Research Agent Prototype</li>
-      <li>AI-assisted networking hub creation</li>
-      <li>AI-supported branding and business card design</li>
-      <li>Iterative experimentation using ChatGPT / Codex</li>
+      <li>AI-assisted Networking Hub Creation</li>
+      <li>AI-supported Branding and Business Card Design</li>
+      <li>ChatGPT / Codexを活用した高速試作と改善サイクル</li>
     </ul>
 
-    <h2>Certificates</h2>
+    <h2>Experiments</h2>
+    <ul>
+      <li>対話型リサーチエージェントの設計と検証</li>
+      <li>個人サイト・名刺・Notion Hubの制作支援</li>
+      <li>文章、構成、プロトタイプの高速反復</li>
+      <li>Human × AIによる役割分担モデルの実践</li>
+    </ul>
+
+    <h2>Related Projects</h2>
+    <ul>
+      <li>Elena</li>
+      <li>Networking Hub</li>
+      <li>Business UX Diagnosis</li>
+    </ul>
+
+    <h2>Learning</h2>
     <ul>
       <li>Google AI Essentials</li>
       <li>Google Prompting Essentials</li>
       <li>Google AI Professional Certificate <span class="certificate-status">In progress</span></li>
     </ul>
 
-    <h2>Experiments</h2>
-    <ul>
-      <li>対話型リサーチエージェントのUI検討</li>
-      <li>個人サイト・名刺・Notion Hub の制作支援</li>
-      <li>文章、構成、プロトタイプの高速反復</li>
-    </ul>
-
-    <h2>Learning</h2>
+    <h2>What I Am Learning</h2>
     <ul>
       <li>AIを答えの生成装置ではなく、思考の壁打ち相手として扱うこと</li>
-      <li>曖昧な意図を構造化し、検証可能な形に落とすこと</li>
-      <li>人間の判断を残したまま制作速度を上げること</li>
+      <li>曖昧な意図を構造化し、検証可能な形へ翻訳すること</li>
+      <li>人間の判断を残したまま制作速度を高めること</li>
+      <li>AIとの適切な役割分担を設計すること</li>
     </ul>
 
     <h2>Future Direction</h2>
     <p>
-      AIとの協働を、個人の思考整理や意思決定支援に接続するインターフェースとして深めていきたい。
+      AIとの協働を、単なる生産性向上ではなく、個人や組織の思考整理・意思決定支援へ接続するインターフェースとして発展させていきたい。
     </p>
   </template>
 
@@ -2774,31 +2814,28 @@
         人間・組織・情報構造を、接続や意思決定の視点から観測。
       </p>
     </div>
+    <p>
+      UIや画面設計だけでなく、人がどのように理解し、迷い、判断し、協働するかまで含めて設計対象として捉えています。
+    </p>
 
     <h2>Capabilities</h2>
     <ul>
-      <li>Information Architecture</li>
       <li>Human-centered Design</li>
+      <li>Information Architecture</li>
       <li>Structure Analysis</li>
+      <li>Decision Making</li>
       <li>Workflow Thinking</li>
-      <li>Project Organization</li>
       <li>Cross-domain Concept Design</li>
     </ul>
 
     <h2>Evidence</h2>
     <ul>
+      <li>広告クリエイティブ制作・進行管理（15年以上）</li>
+      <li>Personal Networking HubのUX設計</li>
       <li>Eight-Layer Structure Analysis</li>
       <li>Human Motivation Frameworks</li>
-      <li>Personal networking hub UX design</li>
-      <li>UX observations from childcare and community experiences</li>
-      <li>Structure-oriented writing and research themes</li>
-    </ul>
-
-    <h2>Certificates</h2>
-    <ul>
-      <li>Google UX Design Professional Certificate</li>
-      <li>Google Project Management Certificate</li>
-      <li>Google People Management Essentials Specialization <span class="certificate-status">In progress</span></li>
+      <li>子育て・コミュニティ活動を通じたUX観察</li>
+      <li>構造思考をテーマとした継続的な発信とリサーチ</li>
     </ul>
 
     <h2>Experiments</h2>
@@ -2806,18 +2843,36 @@
       <li>企業を8層で見るフレームワーク</li>
       <li>人が動く理由を整理するモチベーション構造</li>
       <li>GitHub Pages・Notion・SNSをつなぐ個人ハブ設計</li>
+      <li>認識翻訳モデルの検証</li>
+      <li>AI時代の意思決定構造の探究</li>
     </ul>
 
-    <h2>Learning</h2>
+    <h2>Related Projects</h2>
     <ul>
-      <li>人の行動は、感情だけでなく構造や環境にも強く影響されること</li>
-      <li>情報設計は、見た目ではなく意思決定のしやすさに関わること</li>
-      <li>組織やサービスを、関係性のシステムとして見ること</li>
+      <li>Networking Hub</li>
+      <li>Elena</li>
+      <li>Business UX Diagnosis</li>
+      <li>The 8-Layer Framework</li>
+    </ul>
+
+    <h2>Certificates</h2>
+    <ul>
+      <li>Google UX Design Professional Certificate</li>
+      <li>Google Project Management Professional Certificate</li>
+      <li>Google People Management Essentials Specialization <span class="certificate-status">In progress</span></li>
+    </ul>
+
+    <h2>What I Am Learning</h2>
+    <ul>
+      <li>人の行動は感情だけでなく、構造や環境からも強く影響を受けること</li>
+      <li>情報設計は見た目だけでなく、意思決定のしやすさに関わること</li>
+      <li>組織やサービスを、関係性のシステムとして捉えること</li>
+      <li>異なる専門領域同士をつなぐ「認識翻訳」の重要性</li>
     </ul>
 
     <h2>Future Direction</h2>
     <p>
-      UX、組織構造、AI時代の意思決定を横断し、人間がよりよく判断できる構造を探っていきたい。
+      UX、組織構造、AI時代の意思決定を横断し、人間がより良い判断や協働を行える構造を探究していきたい。
     </p>
   </template>
 
