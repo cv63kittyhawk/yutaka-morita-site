@@ -865,8 +865,8 @@
 
     .framework-link-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: 14px;
+      grid-template-columns: 1fr;
+      gap: 12px;
       margin-top: 18px;
     }
 
@@ -912,6 +912,10 @@
     }
 
     .article-link-card {
+      display: grid;
+      grid-template-columns: minmax(132px, 32%) minmax(0, 1fr);
+      gap: 0 16px;
+      align-items: center;
       padding: 0;
       overflow: hidden;
     }
@@ -919,23 +923,28 @@
     .article-link-card .framework-link-label,
     .article-link-card h3,
     .article-link-card .card-link {
+      grid-column: 2;
       margin-right: 18px;
-      margin-left: 18px;
+      margin-left: 0;
     }
 
     .article-link-card .framework-link-label {
-      margin-top: 12px;
+      align-self: end;
+      margin-top: 16px;
     }
 
     .article-link-card .card-link {
-      margin-bottom: 18px;
+      align-self: start;
+      margin-bottom: 16px;
     }
 
     .article-card-image,
     .article-card-placeholder {
+      grid-row: 1 / span 3;
       width: 100%;
-      aspect-ratio: 1.91 / 1;
-      border-bottom: 1px solid #dce4ee;
+      height: 100%;
+      min-height: 128px;
+      border-right: 1px solid #dce4ee;
     }
 
     .article-card-image {
@@ -1219,6 +1228,11 @@
       letter-spacing: 0;
     }
 
+    .project-simple-links + .project-simple-label {
+      display: block;
+      margin-top: 26px;
+    }
+
     .project-simple-actions {
       display: grid;
       gap: 8px;
@@ -1392,6 +1406,28 @@
 
       .framework-panel {
         padding: 18px;
+      }
+
+      .article-link-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .article-link-card .framework-link-label,
+      .article-link-card h3,
+      .article-link-card .card-link {
+        grid-column: 1;
+        margin-right: 18px;
+        margin-left: 18px;
+      }
+
+      .article-card-image,
+      .article-card-placeholder {
+        grid-row: auto;
+        aspect-ratio: 1.91 / 1;
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid #dce4ee;
       }
 
       .framework-image {
@@ -3071,6 +3107,7 @@
       </div>
     </div>
 
+    <span class="project-simple-label">Related Article</span>
     <div class="framework-link-grid">
       <div class="framework-link-card article-link-card">
         <img class="article-card-image" src="assets/article-elena-qiita.jpg" alt="" loading="lazy">
@@ -3362,6 +3399,21 @@
             </svg>
           </a>
         </div>
+      </div>
+    </div>
+
+    <span class="project-simple-label">Related Article</span>
+    <div class="framework-link-grid">
+      <div class="framework-link-card article-link-card">
+        <img class="article-card-image" src="assets/article-networking-qiita.jpg" alt="" loading="lazy">
+        <span class="framework-link-label">Qiita</span>
+        <h3>Codexでサイトを作ったら実装より認識合わせに時間を使った話</h3>
+        <a class="card-link" href="https://qiita.com/cv63kittyhawk/items/cd8152cb95549797f5f6" target="_blank" rel="noopener noreferrer">
+          View more
+          <svg class="inline-external-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M10 14 20 4M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/>
+          </svg>
+        </a>
       </div>
     </div>
 
